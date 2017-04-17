@@ -1,0 +1,24 @@
+body {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.AboutPage{
+  padding-top:70px;
+  padding-bottom:-10px;
+}
+
+.HomePage{
+  padding-top:70px;
+}
+
+.navbar{
+  margin-bottom:0.1px;
+}
+
+.navbar-brand{
+  margin-top:5.6px;
+  text-shadow:5px;
+}
