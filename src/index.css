@@ -3,6 +3,7 @@ body {
   margin-right: 0px;
   padding: 0;
   font-family: sans-serif;
+  background: #FAFAFA;
 }
 
 .AboutPage{
@@ -16,9 +17,33 @@ body {
 
 .navbar{
   margin-bottom:0.1px;
+  background:#FAFAFA
 }
 
 .navbar-brand{
   margin-top:5.6px;
   text-shadow:5px;
 }
+
+.footer{
+  background-color: #6E6E6E;
+  text-align:center;
+  padding-top:5px;
+  color:#F2F2F2;
+  margin-left:-115px;
+  margin-right:-115px;
+  padding-bottom:100px;
+}
+
+.ImageBar{
+  background-color: #6E6E6E;
+  text-align:center;
+  padding-top:5px;
+  color:#F2F2F2;
+  margin-left:-115px;
+  margin-right:-115px;
+  padding-bottom:100px;
+}
+/*.navbar-form,.navbar-right{
+  margin-top:5.5px;
+}*/
