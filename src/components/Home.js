@@ -1,5 +1,4 @@
 const React = require('react');
-var Link = require('react-router-dom').Link;
 
 var Home = React.createClass({
   render:function(){

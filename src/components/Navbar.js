@@ -21,7 +21,7 @@ var Navbar = React.createClass({
               <ul className="nav navbar-nav">
                 <li><NavLink exact to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
-                <li><NavLink to="/api">API</NavLink></li>
+                <li><NavLink to="/api/home">API</NavLink></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li><NavLink exact to="/login">Login</NavLink></li>

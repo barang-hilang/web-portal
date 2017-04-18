@@ -6,6 +6,16 @@ body {
   background: #FAFAFA;
 }
 
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
 .AboutPage{
   padding-top:70px;
   padding-bottom:-10px;
@@ -46,6 +56,12 @@ body {
   margin-left:-115px;
   margin-right:-115px;
   padding-bottom:100px;
+}
+
+.LoginPage{
+  padding-top:50px;
+  padding-left:250px;
+  padding-right:250px;
 }
 /*.navbar-form,.navbar-right{
   margin-top:5.5px;
