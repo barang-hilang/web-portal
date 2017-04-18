@@ -9,6 +9,7 @@ var Navbar = require('./components/Navbar.js');
 var ImageBar = require('./components/ImageBar.js');
 var Footer = require('./components/Footer.js');
 var Login = require('./components/Login.js');
+var Register = require('./components/Register.js');
 var SideBarAPI = require('./components/ApiPage/SideBar.js');
 var ContentAPI = require('./components/ApiPage/Content.js');
 
@@ -16,7 +17,7 @@ var HomeRoute = React.createClass({
   render: function(){
     return(
       <div>
-        <ImageBar/>
+        <ImageBar page="Home"/>
         <Home/>
         <Footer/>
       </div>
@@ -28,7 +29,7 @@ var AboutRoute = React.createClass({
   render: function(){
     return(
       <div>
-        <ImageBar/>
+        <ImageBar page="About"/>
         <About/>
         <Footer/>
       </div>
@@ -94,7 +95,8 @@ class App extends Component {
             <Route path='/api/barang' component={ApiPageBarang}/>
             <Route path='/api/pelaporan' component={ApiPagePelaporan}/>
             <Route exact path="/login" component={Login}/>
-            <Route render={function (){return <h1>Not Found</h1>}}/>
+            <Route exact path="/register" component={Register}/>
+            <Route render={function (){return <div className="NotFound"><h1>404</h1><hr/><h1>Not Found</h1><hr/><h3>I'm Sorry, your looking page are not available.</h3></div>}}/>
           </Switch>
         </div>
       </Router>

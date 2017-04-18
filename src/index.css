@@ -17,12 +17,13 @@ hr {
 }
 
 .AboutPage{
-  padding-top:70px;
-  padding-bottom:-10px;
+  padding-top:30px;
+  padding-bottom: 30px;
 }
 
 .HomePage{
-  padding-top:70px;
+  padding-top:30px;
+  padding-bottom: 30px;
 }
 
 .navbar{
@@ -45,23 +46,30 @@ hr {
   color:#F2F2F2;
   margin-left:-115px;
   margin-right:-115px;
-  padding-bottom:100px;
+  padding-bottom:20px;
 }
 
 .ImageBar{
-  background-color: #6E6E6E;
+  /*background-image: url('../public/images/bg1.jpg');*/
   text-align:center;
-  padding-top:5px;
   color:#F2F2F2;
+  padding-top:200px;
   margin-left:-115px;
   margin-right:-115px;
   padding-bottom:100px;
 }
 
 .LoginPage{
-  padding-top:50px;
+  padding-top:100px;
   padding-left:250px;
   padding-right:250px;
+}
+
+.NotFound{
+  padding-top:150px;
+  padding-left:250px;
+  padding-right:250px;
+  text-align: center;
 }
 /*.navbar-form,.navbar-right{
   margin-top:5.5px;

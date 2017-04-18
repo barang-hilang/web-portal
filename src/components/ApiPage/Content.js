@@ -8,6 +8,8 @@ var HomeDiv = <div>
     <p><bold>First Thing First</bold> you need to sign-up as developer</p>
     <p>Then you can log-in to barang-hilang developer page, and see your Api Key</p>
     <p>After that you can use the api key within your header http request, see example below </p>
+    <h2>Base URI</h2>
+    <p><code><a href="barang-hilang.azurewebsites.net/api/v1">barang-hilang.azurewebsites.net/api/v1</a></code></p>
     <br/>
     <p>Request Header</p>
     <p><code>X-Auth-Token:<italic> YOUR_TOKEN_API_KEY,</italic></code></p>
@@ -32,6 +34,37 @@ var HomeDiv = <div>
             <td>Application-Context</td>
             <td>application/json</td>
             <td>Request method, for requesting JSON for response API</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br/>
+    <p>We also try to use HTTP Method Request GET,PUT,DELETE,POST for CRUD function in one base uri path</p>
+    <p>Example, if you want to add user in your app you just need one uri : <code>BASE_URI/users</code> then use method what you need.</p>
+    <div className="table-responsive">
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Method Request</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td>For Find / Find all data from barang-hilang web services</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>For Insert data from barang-hilang web services</td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td>For Update data from barang-hilang web services</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>For Delete data from barang-hilang web services</td>
           </tr>
         </tbody>
       </table>
@@ -85,14 +118,15 @@ var Content = React.createClass({
   },
 
   render: function(){
+    var Result;
     if(this.state.content==="home")
-      var Result = HomeDiv;
+      Result = HomeDiv;
     else if(this.state.content==="users")
-      var Result = User;
+      Result = User;
       else if(this.state.content==="barang")
-        var Result = Barang;
+        Result = Barang;
         else if(this.state.content==="pelaporan")
-          var Result = Pelaporan;
+          Result = Pelaporan;
 
     return (
       <div id="page-content-wrapper">

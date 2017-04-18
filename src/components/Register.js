@@ -1,12 +1,12 @@
 var React = require('react');
 
-var Login = React.createClass({
+var Register = React.createClass({
   render: function(){
     return(
       <div className="container LoginPage">
-        <h2>Login</h2>
+        <h2>Register</h2>
         <hr/>
-        <p>If you're developer, you can login here</p>
+        <p>If you're developer, you can sign-up here</p>
         <form>
           <div className="form-group">
             <label for="usr">Username/Email :</label>
@@ -23,4 +23,4 @@ var Login = React.createClass({
       }
     });
 
-    module.exports = Login;
+    module.exports = Register;

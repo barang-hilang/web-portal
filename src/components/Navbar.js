@@ -27,12 +27,12 @@ var Navbar = React.createClass({
                 <li><NavLink exact to="/login">Login</NavLink></li>
                 <li><NavLink to="/register">Register</NavLink></li>
               </ul>
-              <form className="navbar-form navbar-right">
+              {/* <form className="navbar-form navbar-right">
                 <div className="form-group">
                   <input type="text" className="form-control" placeholder="Search"/>
                     <button type="submit" className="btn btn-default">Cari</button>
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
         </nav>
