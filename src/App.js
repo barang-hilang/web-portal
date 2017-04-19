@@ -90,10 +90,10 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={HomeRoute}/>
             <Route path='/about' component={AboutRoute}/>
-            <Route path='/api/home' component={ApiPageHome}/>
-            <Route path='/api/users' component={ApiPageUsers}/>
-            <Route path='/api/barang' component={ApiPageBarang}/>
-            <Route path='/api/pelaporan' component={ApiPagePelaporan}/>
+            <Route path='/doc/api/home' component={ApiPageHome}/>
+            <Route path='/doc/api/users' component={ApiPageUsers}/>
+            <Route path='/doc/api/barang' component={ApiPageBarang}/>
+            <Route path='/doc/api/pelaporan' component={ApiPagePelaporan}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>
             <Route render={function (){return <div className="NotFound"><h1>404</h1><hr/><h1>Not Found</h1><hr/><h3>I'm Sorry, your looking page are not available.</h3></div>}}/>

@@ -35,7 +35,8 @@ hr {
 }
 
 .navbar-brand{
-  margin-top:5.6px;
+  padding-top:10.5px;
+  margin-top:5px;
   text-shadow:5px;
 }
 
@@ -61,8 +62,12 @@ hr {
 
 .LoginPage{
   padding-top:100px;
-  padding-left:250px;
-  padding-right:250px;
+  /*padding-left:250px;
+  padding-right:250px;*/
+}
+
+.RegisterPage{
+  padding-top:30px;
 }
 
 .NotFound{

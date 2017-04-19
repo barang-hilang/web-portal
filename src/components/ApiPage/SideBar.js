@@ -8,18 +8,18 @@ var SideBar = React.createClass({
       <div id="sidebar-wrapper" >
            <ul className="sidebar-nav">
                <li className="sidebar-brand">
-                 <NavLink exact to="/api/home">
+                 <NavLink exact to="/doc/api/home">
                     Lists of API Content
                  </NavLink>
                </li>
                <li>
-                  <NavLink to="/api/users">User</NavLink>
+                  <NavLink to="/doc/api/users">User</NavLink>
                </li>
                <li>
-                 <NavLink to="/api/barang">Barang</NavLink>
+                 <NavLink to="/doc/api/barang">Barang</NavLink>
                </li>
                <li>
-                 <NavLink to="/api/pelaporan">Pelaporan</NavLink>
+                 <NavLink to="/doc/api/pelaporan">Pelaporan</NavLink>
                </li>
            </ul>
        </div>
