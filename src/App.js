@@ -12,7 +12,7 @@ var Login = require('./components/Login.js');
 var Register = require('./components/Register.js');
 var SideBarAPI = require('./components/ApiPage/SideBar.js');
 var ContentAPI = require('./components/ApiPage/Content.js');
-var Blablablablabla = "Tes git";
+
 var HomeRoute = React.createClass({
   render: function(){
     return(
