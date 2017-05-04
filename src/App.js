@@ -19,9 +19,7 @@ var TestRoute = React.createClass({
     return(
       <div>
         <ImageBar page="Home"/>
-        <div>
-          {ResultUserApi.getAllUsers}
-        </div>
+        <ResultUserApi/>
         <Footer/>
       </div>
     );
