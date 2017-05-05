@@ -1,81 +1,15 @@
-var React = require('react');
-
-
-
-module.exports=TestPage;
-
-// class TestResultUser{
-//   static getAllUsers(){
-//     return fetch('localhost:8080/api/v1/users.json',{
-//       method:'GET',
-//       headers:{
-//         'apiKey' : 'wakowakowakowa',
-//       }
-//     })
-//    .then(response => {
-//        return response.json();
-//    })
-//    .then(data => {
-//        return data;
-//    })
-//    .catch(error => {
-//        return error;
-//    });
-//   }
-// }
+// import React from 'react';
+// import axios from 'axios';
 //
-// const TestResultUser = () => {
-//   return (dispatch) => {
-//     return fetch('localhost:8080/api/v1/users.json', {
-//       method: 'GET',
-//       headers: {
-//         'apiKey': 'wakowakowakowa'
-//       }
-//     })
-//     .then( (response) => {
-//       console.log('Actions - fetchJobs - received response: ', response)
-//       return response.json();
-//     })
-//     .then( (jobs) => {
-//       console.log('Actions - fetchJobs - received jobs: ', jobs)
-//       // dispatch(receiveJobs(jobs))
-//     })
-//     .catch( (error) => {
-//       console.warn('Actions - fetchJobs - recreived error: ', error)
-//     })
-//   }
-// }
+// export const requestAllUsers =(message)=> {
+//   const header= {apiKey: 'wakowakowakowa'};
 //
-// export default TestResultUser;
-
-// var TestPage = React.createClass({
-//   getInitialState: function(){
+//   return axios.get('localhost:8080/api/v1/users',header)
+//   .then((response)=>{
+//     const {data} = response.data;
+//
 //     return {
-//       'data':[]
-//     }
-//   },
-//
-//   componentDidMount() {
-//     fetch('localhost:8080/api/v1/users', {
-//           method: 'GET',
-//           headers: {
-//             'apiKey': 'wakowakowakowa'
-//           }
-//         })
-//         .then( (response) => {
-//           console.log('Actions - fetchJobs - received response: ', response)
-//           return response.json();
-//         })
-//         .then( (json) => {
-//             this.setState({data: json});
-//         });
-//    },
-//
-//    render: function(){
-//      return (
-//        <div>
-//         {this.state.data}
-//        </div>
-//      )
-//    }
-// })
+//       result: data.result
+//     };
+//   })
+// };

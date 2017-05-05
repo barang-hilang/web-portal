@@ -1,3 +1,4 @@
+var axios = require('axios');
 import React, { Component } from 'react';
 var ReactRouter = require('react-router-dom');
 var Router = ReactRouter.BrowserRouter;
@@ -12,17 +13,131 @@ var Login = require('./components/Login.js');
 var Register = require('./components/Register.js');
 var SideBarAPI = require('./components/ApiPage/SideBar.js');
 var ContentAPI = require('./components/ApiPage/Content.js');
-var ResultUserApi = require('./components/Test/TestPage.js');
+var {request} = require('superagent');
+// const PostDataTest = function(){
+//   const user = {
+//
+//   };
+//   return axios.post('http://127.0.0.1:8080/api/v1/users', user)
+//     .then((response) => {
+//       const { data } = response.data;
+//
+//       return {
+//         text: data.answer,
+//         author: 'Bot',
+//         createdAt: moment().local().format(),
+//       };
+// })
+// };
 
 var TestRoute = React.createClass({
-  render: function(){
-    return(
+  getInitialState: function(){
+    return {
+      message:[],
+       items: []
+    }
+  },
+
+  componentDidMount() {
+    // fetch('http://localhost:8080/api/v1/users',{
+    //   headers:{
+    //     'Access-Control-Allow-Origin':'*',
+    //     'apiKey':'wakowakowakowa'
+    //   }
+    // })
+    //   .then(function(response) {
+    //     return response.json()
+    //   })
+
+    // axios
+    //   .get('http://localhost:8080/api/v1/users',{
+        // headers:{
+        //   'apiKey':'wakowakowakowa',
+        //   'Content-Type': 'application/json',
+        //   'Accept': 'application/json'
+        // }
+    //   })
+    //   .then(res => this.setState({ message: res.message }))
+    //   .catch(err => console.log(err))
+
+      // axios.get('http://127.0.0.1:8080/api/v1/users',{
+      //   mode: "no-cors",
+      //   headers:{
+      //     'apiKey':'wakowakowakowa',
+      //     'Content-Type': 'application/json',
+      //     'Accept': 'application/json'
+      //   }
+      // })
+      // .then(res => this.setState({ message: res.data.result }))
+      // .then(response => console.log(response))
+      // .catch(err => console.log(err))
+
+      // var _this = this;
+      // axios.get("https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=perl&site=stackoverflow")
+      // .then(function(res){
+      //     _this.setState({
+      //       items: res.data.items
+      //     });
+      //   })
+      // .catch(function(e) {
+      // console.log("ERROR ", e);
+      // })
+
+      var _this = this;
+      axios.get('http://127.0.0.1:8080/api/v1/users',{
+        headers:{
+          'apiKey':'wakowakowakowa',
+          // 'Access-Control-Allow-Origin':'*'
+        }
+      })
+      .then(function(res){
+          _this.setState({
+            items: res.data.message
+          });
+        })
+      .catch(function(e) {
+        console.log(e.message);
+        console.log(e.code); // Not always specified
+        console.log(e.config); // The config that was used to make the request
+        console.log(e.response); // Only available if response was received from the server
+      })
+
+      //
+      // axios.defaults.baseURL = 'http://127.0.0.1:8080/api/v1';
+      // axios.defaults.headers.common['apiKey'] = "wakowakowakowa";
+      // axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
+      // axios.get('/users')
+      // .then(res => this.setState({ message: res.data }))
+      // .catch(err => console.log(err))
+  },
+
+  // render: function(){
+  //   return(
+  //     <div>
+  //       <ImageBar page="Home"/>
+  //       <div>
+  //         {this.state.items.data.items}
+  //       </div>
+  //       <Footer/>
+  //     </div>
+  //   );
+  // }
+
+  render : function(){
+    // const renderItems = this.state.items.map(function(item, i) {
+    //   return <li key={i}>{item.title}</li>
+    // });
+
+    return (
       <div>
-        <ImageBar page="Home"/>
-        <ResultUserApi/>
+         <ImageBar page="Home"/>
+         <ul className="App">
+           {this.state.items}
+
+         </ul>
         <Footer/>
-      </div>
-    );
+     </div>
+   );
   }
 });
 
