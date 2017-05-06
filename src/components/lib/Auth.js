@@ -1,3 +1,5 @@
+var React = require('react');
+
 let authenticated = false;
 let developer = null;
 
@@ -5,18 +7,21 @@ const isLogged =()=> authenticated;
 
 const getUser =()=> developer;
 
-const login =()=>
+const login =()=>{
   new Promise((resolve,reject)=>{
     setTimeout(()=>{
       authenticated = true;
       resolve();
-    },200);
+    },100);
   });
+  authenticated=true;
+};
+
 
 const logout = () =>{
   authenticated=false;
   return Promise.resolve();
-}
+};
 
 export const requireAuth = (nextState, replace, next) => {
   if (authenticated) {
@@ -27,9 +32,15 @@ export const requireAuth = (nextState, replace, next) => {
   }
 };
 
+function anotherLogin(){
+  this.authenticated=true;
+}
+
+
 export default{
   isLogged,
   getUser,
   login,
-  logout
+  logout,
+  anotherLogin
 };

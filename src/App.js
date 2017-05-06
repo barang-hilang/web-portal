@@ -13,6 +13,7 @@ var AuthLogin = require('./components/AuthLogin.js');
 var Register = require('./components/Register.js');
 var SideBarAPI = require('./components/ApiPage/SideBar.js');
 var ContentAPI = require('./components/ApiPage/Content.js');
+// var auth = require('./components/lib/Auth.js');
 
 var TestRoute = React.createClass({
   getInitialState: function(){
@@ -23,50 +24,6 @@ var TestRoute = React.createClass({
   },
 
   componentDidMount() {
-    // fetch('http://localhost:8080/api/v1/users',{
-    //   headers:{
-    //     'Access-Control-Allow-Origin':'*',
-    //     'apiKey':'wakowakowakowa'
-    //   }
-    // })
-    //   .then(function(response) {
-    //     return response.json()
-    //   })
-
-    // axios
-    //   .get('http://localhost:8080/api/v1/users',{
-        // headers:{
-        //   'apiKey':'wakowakowakowa',
-        //   'Content-Type': 'application/json',
-        //   'Accept': 'application/json'
-        // }
-    //   })
-    //   .then(res => this.setState({ message: res.message }))
-    //   .catch(err => console.log(err))
-
-      // axios.get('http://127.0.0.1:8080/api/v1/users',{
-      //   mode: "no-cors",
-      //   headers:{
-      //     'apiKey':'wakowakowakowa',
-      //     'Content-Type': 'application/json',
-      //     'Accept': 'application/json'
-      //   }
-      // })
-      // .then(res => this.setState({ message: res.data.result }))
-      // .then(response => console.log(response))
-      // .catch(err => console.log(err))
-
-      // var _this = this;
-      // axios.get("https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=perl&site=stackoverflow")
-      // .then(function(res){
-      //     _this.setState({
-      //       items: res.data.items
-      //     });
-      //   })
-      // .catch(function(e) {
-      // console.log("ERROR ", e);
-      // })
-
       //yang jalan ini
       var _this = this;
       axios.get('http://127.0.0.1:8080/api/v1/users',{
@@ -86,27 +43,8 @@ var TestRoute = React.createClass({
         console.log(e.config); // The config that was used to make the request
         console.log(e.response); // Only available if response was received from the server
       })
-
-      //
-      // axios.defaults.baseURL = 'http://127.0.0.1:8080/api/v1';
-      // axios.defaults.headers.common['apiKey'] = "wakowakowakowa";
-      // axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
-      // axios.get('/users')
-      // .then(res => this.setState({ message: res.data }))
-      // .catch(err => console.log(err))
   },
 
-  // render: function(){
-  //   return(
-  //     <div>
-  //       <ImageBar page="Home"/>
-  //       <div>
-  //         {this.state.items.data.items}
-  //       </div>
-  //       <Footer/>
-  //     </div>
-  //   );
-  // }
 
   render : function(){
     // const renderItems = this.state.items.map(function(item, i) {
@@ -219,3 +157,64 @@ class App extends Component {
 }
 
 export default App;
+// fetch('http://localhost:8080/api/v1/users',{
+//   headers:{
+//     'Access-Control-Allow-Origin':'*',
+//     'apiKey':'wakowakowakowa'
+//   }
+// })
+//   .then(function(response) {
+//     return response.json()
+//   })
+
+// axios
+//   .get('http://localhost:8080/api/v1/users',{
+    // headers:{
+    //   'apiKey':'wakowakowakowa',
+    //   'Content-Type': 'application/json',
+    //   'Accept': 'application/json'
+    // }
+//   })
+//   .then(res => this.setState({ message: res.message }))
+//   .catch(err => console.log(err))
+
+  // axios.get('http://127.0.0.1:8080/api/v1/users',{
+  //   mode: "no-cors",
+  //   headers:{
+  //     'apiKey':'wakowakowakowa',
+  //     'Content-Type': 'application/json',
+  //     'Accept': 'application/json'
+  //   }
+  // })
+  // .then(res => this.setState({ message: res.data.result }))
+  // .then(response => console.log(response))
+  // .catch(err => console.log(err))
+
+  // var _this = this;
+  // axios.get("https://api.stackexchange.com/2.2/search?order=desc&sort=activity&intitle=perl&site=stackoverflow")
+  // .then(function(res){
+  //     _this.setState({
+  //       items: res.data.items
+  //     });
+  //   })
+  // .catch(function(e) {
+  // console.log("ERROR ", e);
+  // })
+  //
+  // axios.defaults.baseURL = 'http://127.0.0.1:8080/api/v1';
+  // axios.defaults.headers.common['apiKey'] = "wakowakowakowa";
+  // axios.defaults.headers.common['Access-Control-Allow-Origin'] = "*";
+  // axios.get('/users')
+  // .then(res => this.setState({ message: res.data }))
+  // .catch(err => console.log(err))
+// render: function(){
+//   return(
+//     <div>
+//       <ImageBar page="Home"/>
+//       <div>
+//         {this.state.items.data.items}
+//       </div>
+//       <Footer/>
+//     </div>
+//   );
+// }

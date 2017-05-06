@@ -6,7 +6,10 @@
     "axios": "^0.16.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-http-request": "^1.0.3"
+    "react-http-request": "^1.0.3",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "react-router-dom": "^4.1.1",

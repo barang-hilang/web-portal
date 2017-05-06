@@ -1,18 +1,13 @@
 var React = require('react');
+var Redirect = require('react-router');
 var axios = require('axios');
 var auth = require('./lib/Auth.js');
-
-const API_BARANG_HILANG_PATH = 'http://127.0.0.1:8080/api/v1/';
-
-const developer = {
-  email : '',
-  password : ''
-}
 
 class AuthLogin extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: '',password:''};
+    this.state = {email: '',password:'',developer:false};
+
     this.loginCek = this.loginCek.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
@@ -35,8 +30,6 @@ class AuthLogin extends React.Component {
   loginCek(event){
     //agar bisa akses beda port, event normal/default dibatalkan
     event.preventDefault();
-    developer.email = this.state.email;
-    developer.password = this.state.password;
 
     axios.post('http://localhost:8080/api/v1/developers/auth',{
       headers:{
@@ -45,38 +38,35 @@ class AuthLogin extends React.Component {
       email : this.state.email,
       password : this.state.password
     })
-    .then(function(res){
+    .then((res)=>{
       console.log(res.data);
-        const {router} = 'blabla';
+
         if(res.data.httpStatus==="FOUND"){
           alert("Success Login");
-          auth.login;
-          // this.setState({email:"ketemu"})
         }
         else {
           alert("Failed");
-          // this.setState({email:"ga ada"})
+
         }
       })
     .catch(function(e) {
       console.log(e.message);
-      console.log(e.code); // Not always specified
-      console.log(e.config); // The config that was used to make the request
-      console.log(e.response); // Only available if response was received from the server
+      console.log(e.code);
+      console.log(e.config);
+      console.log(e.response);
         alert("Error");
-        // this.setState({email:"error"})
-    })
+    });
 
   }
 
-
   render() {
+
     return(
       <div className="container LoginPage">
         <h2>Login</h2>
         <hr/>
         <p>If you're developer, you can login here</p>
-        <form onSubmit={this.loginCek}>
+        <form onSubmit={this.loginCek.bind(this)}>
 
           <div className="form-group">
             <label>Username/Email :</label>
