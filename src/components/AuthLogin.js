@@ -1,11 +1,13 @@
 var React = require('react');
 var axios = require('axios');
-// var {  isLogged,
-//   getUser,
-//   login,
-//   logout} = require('./lib/Auth.js');
+var auth = require('./lib/Auth.js');
 
 const API_BARANG_HILANG_PATH = 'http://127.0.0.1:8080/api/v1/';
+
+const developer = {
+  email : '',
+  password : ''
+}
 
 class AuthLogin extends React.Component {
   constructor(props) {
@@ -33,6 +35,8 @@ class AuthLogin extends React.Component {
   loginCek(event){
     //agar bisa akses beda port, event normal/default dibatalkan
     event.preventDefault();
+    developer.email = this.state.email;
+    developer.password = this.state.password;
 
     axios.post('http://localhost:8080/api/v1/developers/auth',{
       headers:{
@@ -43,8 +47,10 @@ class AuthLogin extends React.Component {
     })
     .then(function(res){
       console.log(res.data);
+        const {router} = 'blabla';
         if(res.data.httpStatus==="FOUND"){
           alert("Success Login");
+          auth.login;
           // this.setState({email:"ketemu"})
         }
         else {

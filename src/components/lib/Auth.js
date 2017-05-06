@@ -5,23 +5,27 @@ const isLogged =()=> authenticated;
 
 const getUser =()=> developer;
 
-const login =(developer)=>
+const login =()=>
   new Promise((resolve,reject)=>{
     setTimeout(()=>{
       authenticated = true;
-      developer = {
-        email:developer.email
-      };
-
       resolve();
     },200);
   });
 
 const logout = () =>{
   authenticated=false;
-  developer=null;
   return Promise.resolve();
 }
+
+export const requireAuth = (nextState, replace, next) => {
+  if (authenticated) {
+    next();
+  } else {
+    replace('/login');
+    next();
+  }
+};
 
 export default{
   isLogged,
