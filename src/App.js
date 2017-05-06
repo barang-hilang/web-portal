@@ -9,26 +9,10 @@ var About = require('./components/About.js');
 var Navbar = require('./components/Navbar.js');
 var ImageBar = require('./components/ImageBar.js');
 var Footer = require('./components/Footer.js');
-var Login = require('./components/Login.js');
+var AuthLogin = require('./components/AuthLogin.js');
 var Register = require('./components/Register.js');
 var SideBarAPI = require('./components/ApiPage/SideBar.js');
 var ContentAPI = require('./components/ApiPage/Content.js');
-var {request} = require('superagent');
-// const PostDataTest = function(){
-//   const user = {
-//
-//   };
-//   return axios.post('http://127.0.0.1:8080/api/v1/users', user)
-//     .then((response) => {
-//       const { data } = response.data;
-//
-//       return {
-//         text: data.answer,
-//         author: 'Bot',
-//         createdAt: moment().local().format(),
-//       };
-// })
-// };
 
 var TestRoute = React.createClass({
   getInitialState: function(){
@@ -83,6 +67,7 @@ var TestRoute = React.createClass({
       // console.log("ERROR ", e);
       // })
 
+      //yang jalan ini
       var _this = this;
       axios.get('http://127.0.0.1:8080/api/v1/users',{
         headers:{
@@ -223,7 +208,7 @@ class App extends Component {
             <Route path='/doc/api/barang' component={ApiPageBarang}/>
             <Route path='/doc/api/pelaporan' component={ApiPagePelaporan}/>
             <Route path='/test' component={TestRoute}/>
-            <Route exact path="/login" component={Login}/>
+            <Route exact path="/login" component={AuthLogin}/>
             <Route exact path="/register" component={Register}/>
             <Route render={function (){return <div className="NotFound"><h1>404</h1><hr/><h1>Not Found</h1><hr/><h3>I'm Sorry, your looking page are not available.</h3></div>}}/>
           </Switch>
