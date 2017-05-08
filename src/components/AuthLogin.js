@@ -2,11 +2,12 @@ var React = require('react');
 var Redirect = require('react-router');
 var axios = require('axios');
 var auth = require('./lib/Auth.js');
+var App = require('../App.js');
 
 class AuthLogin extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: '',password:'',developer:false};
+    this.state = {email: '',password:'',authenticated:false};
 
     this.loginCek = this.loginCek.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
@@ -43,6 +44,11 @@ class AuthLogin extends React.Component {
 
         if(res.data.httpStatus==="FOUND"){
           alert("Success Login");
+          this.state.authenticated=true;
+          this.context.router.push({
+              pathname: '/',
+              state: {email: this.state.authenticated}
+          })
         }
         else {
           alert("Failed");
@@ -60,7 +66,7 @@ class AuthLogin extends React.Component {
   }
 
   render() {
-
+    if(!this.state.authenticated)
     return(
       <div className="container LoginPage">
         <h2>Login</h2>
@@ -87,6 +93,8 @@ class AuthLogin extends React.Component {
             </form>
       </div>
         );
+      else if(this.state.authenticated)
+        return(<App newAuthenticated={this.state.authenticated}/>);
       }
     }
 

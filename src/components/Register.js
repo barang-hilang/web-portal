@@ -33,6 +33,7 @@ class Register  extends React.Component {
       headers:{
         'Content-Type' : 'application/json'
       },
+      idrole: 2,
       email : this.state.email,
       password : this.state.password
     })

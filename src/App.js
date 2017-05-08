@@ -19,7 +19,8 @@ var TestRoute = React.createClass({
   getInitialState: function(){
     return {
       message:[],
-       items: []
+       items: [],
+       authenticated: false
     }
   },
 
@@ -133,6 +134,10 @@ var ApiPagePelaporan = React.createClass({
 });
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <Router>
@@ -148,7 +153,7 @@ class App extends Component {
             <Route path='/test' component={TestRoute}/>
             <Route exact path="/login" component={AuthLogin}/>
             <Route exact path="/register" component={Register}/>
-            <Route render={function (){return <div className="NotFound"><h1>404</h1><hr/><h1>Not Found</h1><hr/><h3>I'm Sorry, your looking page are not available.</h3></div>}}/>
+            <Route render={function (){return <div className="NotFound"><h1>404</h1><hr/><h1>Not Found</h1><hr/><h3>Im Sorry, your looking page are not available.</h3></div>}}/>
           </Switch>
         </div>
       </Router>
