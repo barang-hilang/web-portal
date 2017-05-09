@@ -3,11 +3,19 @@ var Redirect = require('react-router');
 var axios = require('axios');
 var auth = require('./lib/Auth.js');
 var App = require('../App.js');
+import { browserHistory } from 'react-router';
+import Pace from 'react-pace-progress'
+import swal from 'sweetalert2'
 
 class AuthLogin extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {email: '',password:'',authenticated:false};
+    this.state = {
+      email: '',
+      password:'',
+      authenticated: false,
+      isLoading:false
+    };
 
     this.loginCek = this.loginCek.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
@@ -31,6 +39,7 @@ class AuthLogin extends React.Component {
   loginCek(event){
     //agar bisa akses beda port, event normal/default dibatalkan
     event.preventDefault();
+    this.setState({isLoading:true});
 
     axios.post('http://localhost:8080/api/v1/developers/auth',{
       headers:{
@@ -40,35 +49,43 @@ class AuthLogin extends React.Component {
       password : this.state.password
     })
     .then((res)=>{
+      this.setState({isLoading: false})
       console.log(res.data);
 
         if(res.data.httpStatus==="FOUND"){
           alert("Success Login");
           this.state.authenticated=true;
-          this.context.router.push({
-              pathname: '/',
-              state: {email: this.state.authenticated}
-          })
+
+          // this.context.router.push({
+          //     pathname: '/',
+          //     state: {authenticated: this.state.authenticated}
+          // })
+          // this.setState({authenticated:true});
         }
         else {
           alert("Failed");
-
         }
       })
-    .catch(function(e) {
+    .catch((e) => {
+      this.setState({isLoading: false})
       console.log(e.message);
       console.log(e.code);
       console.log(e.config);
       console.log(e.response);
         alert("Error");
     });
-
+      // this.context.router.push({
+      //     pathname: '/',
+      //     state: {authenticated: this.state.authenticated}
+      // });
+      // console.log("blakbakblabla");
+      // browserHistory.push("/");
   }
 
   render() {
-    if(!this.state.authenticated)
     return(
       <div className="container LoginPage">
+
         <h2>Login</h2>
         <hr/>
         <p>If you're developer, you can login here</p>
@@ -91,10 +108,13 @@ class AuthLogin extends React.Component {
 
             <button type="submit" className="btn btn-primary">Login</button>
             </form>
+            <br/>
+            <br/>
+            <br/>
+              {this.state.isLoading ? <Pace color="#7f7fff"/> : null}
+              <hr/>
       </div>
         );
-      else if(this.state.authenticated)
-        return(<App newAuthenticated={this.state.authenticated}/>);
       }
     }
 
