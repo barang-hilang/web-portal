@@ -50,17 +50,16 @@ class AuthLogin extends React.Component {
     })
     .then((res)=>{
       this.setState({isLoading: false})
+
       console.log(res.data);
+      console.log(res.data.result[0].idDeveloper);
 
         if(res.data.httpStatus==="FOUND"){
           alert("Success Login");
           this.state.authenticated=true;
 
-          // this.context.router.push({
-          //     pathname: '/',
-          //     state: {authenticated: this.state.authenticated}
-          // })
-          // this.setState({authenticated:true});
+          localStorage.setItem('authenticated',res.data.result[0].idDeveloper);
+          console.log(localStorage.getItem('authenticated'))
         }
         else {
           alert("Failed");
@@ -74,15 +73,10 @@ class AuthLogin extends React.Component {
       console.log(e.response);
         alert("Error");
     });
-      // this.context.router.push({
-      //     pathname: '/',
-      //     state: {authenticated: this.state.authenticated}
-      // });
-      // console.log("blakbakblabla");
-      // browserHistory.push("/");
   }
 
   render() {
+    if(localStorage.getItem('authenticated')==-1){
     return(
       <div className="container LoginPage">
 
@@ -115,6 +109,14 @@ class AuthLogin extends React.Component {
               <hr/>
       </div>
         );
+      }
+      else if(localStorage.getItem('authenticated')!=-1){
+        return(
+          <div>
+            <h2>You already logged in</h2>
+          </div>
+        );
+      }
       }
     }
 
