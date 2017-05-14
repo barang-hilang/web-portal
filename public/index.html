@@ -24,6 +24,10 @@
 </body>
 <script>
 $(document).ajaxStart(function() { Pace.restart(); });
-setTimeout(function(){ alert("You have to log in again."); localStorage.setItem('authenticated',-1); }, 600000);
+if(localStorage.getItem('authenticated')!=-1){
+	setTimeout(function(){ alert("You have to log in again.");
+	localStorage.setItem('authenticated',-1); window.location="http://localhost:3000/";}, 600000);
+
+}
 </script>
 </html>

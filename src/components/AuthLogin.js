@@ -58,8 +58,11 @@ class AuthLogin extends React.Component {
           alert("Success Login");
           this.state.authenticated=true;
 
-          localStorage.setItem('authenticated',res.data.result[0].idDeveloper);
-          console.log(localStorage.getItem('authenticated'))
+          localStorage.setItem('authenticated',res.data.result[0].email);
+          alert(localStorage.getItem('authenticated'));
+          console.log(localStorage.getItem('authenticated'));
+
+          window.location="http://localhost:3000/";
         }
         else {
           alert("Failed");
