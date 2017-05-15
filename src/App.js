@@ -11,6 +11,7 @@ var ImageBar = require('./components/ImageBar.js');
 var Footer = require('./components/Footer.js');
 var AuthLogin = require('./components/AuthLogin.js');
 var Register = require('./components/Register.js');
+var ProfilePage = require('./components/ProfilePage.js');
 var SideBarAPI = require('./components/ApiPage/SideBar.js');
 var ContentAPI = require('./components/ApiPage/Content.js');
 // var auth = require('./components/lib/Auth.js');
@@ -64,6 +65,16 @@ var TestRoute = React.createClass({
    );
   }
 });
+
+var Profile = React.createClass({
+  render: function() {
+    return(
+      <div>
+        <ProfilePage/>
+      </div>
+    )
+  }
+})
 
 var HomeRoute = React.createClass({
   render: function(){
@@ -152,6 +163,7 @@ class App extends Component {
             <Route path='/doc/api/pelaporan' component={ApiPagePelaporan}/>
             <Route path='/test' component={TestRoute}/>
             <Route exact path="/login" component={AuthLogin}/>
+            <Route exact path="/my/profile" component={Profile}/>
             <Route exact path="/register" component={Register}/>
             <Route render={function (){return <div className="NotFound"><h1>404</h1><hr/><h1>Not Found</h1><hr/><h3>Im Sorry, your looking page are not available.</h3></div>}}/>
           </Switch>

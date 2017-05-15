@@ -30,8 +30,8 @@ var Navbar = React.createClass({
                 <li><NavLink to="/doc/api/home">API</NavLink></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
+              <li><NavLink to="/register">Register</NavLink></li>
                 <li><NavLink exact to="/login">Login</NavLink></li>
-                <li><NavLink to="/register">Register</NavLink></li>
               </ul>
               {/* <form className="navbar-form navbar-right">
                 <div className="form-group">
@@ -64,11 +64,11 @@ var Navbar = React.createClass({
                   <li><NavLink exact to="/">Home</NavLink></li>
                   <li><NavLink to="/about">About</NavLink></li>
                   <li><NavLink to="/doc/api/home">API</NavLink></li>
+                  <li><NavLink exact to="/my/profile">Profile</NavLink></li>
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
-                  <li><NavLink exact to="/profile">Profile</NavLink></li>
-                  <li onClick={this.logout.bind(this)}><a href="#">Logout</a></li>
                   <li><NavLink to="/register">Register</NavLink></li>
+                  <li onClick={this.logout.bind(this)}><a href="#">Logout</a></li>
                 </ul>
                 {/* <form className="navbar-form navbar-right">
                   <div className="form-group">

@@ -115,8 +115,12 @@ class AuthLogin extends React.Component {
       }
       else if(localStorage.getItem('authenticated')!=-1){
         return(
-          <div>
-            <h2>You already logged in</h2>
+          <div className="NotFound">
+            <h1>403</h1>
+            <hr/>
+            <h1>You already logged in</h1>
+            <hr/>
+            <h3>Im Sorry, your looking page are not available. Please Logout First</h3>
           </div>
         );
       }
