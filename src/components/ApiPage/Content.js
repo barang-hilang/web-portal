@@ -24,11 +24,11 @@ var HomeDiv = <div>
     </pre>
     <hr/>
     <h3>Request Header</h3>
-    {/* <p><code>X-Auth-Token:<italic> YOUR_TOKEN_API_KEY,</italic></code></p>
+    {/* <p><code>apiKey:<italic> YOUR_TOKEN_apiKey,</italic></code></p>
     <p><code>Application-Context: application/json</code></p> */}
     <pre>
       <code className="language-javascript hljs">
-        apiKey: YOUR_TOKEN_API_KEY,<br/>
+        apiKey: YOUR_TOKEN_apiKey,<br/>
         Content-Type: application/json
       </code>
     </pre>
@@ -113,9 +113,9 @@ var User =(
     <h1>Users Content</h1>
     <p>Users are the data of person that assign / sign-up to your app as a person that want to post something lost</p>
     <hr/>
-    <h3>Find All Users</h3>
+    <h3>Get All Users</h3>
     <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
     <p>Request Body : <code>none</code></p>
@@ -128,22 +128,22 @@ var User =(
           <br/>
           &nbsp;result:	&#91;
           <br/>         &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          <br/>            idUser:"1",
+          <br/>            idDeveloper:"2",
+          <br/>            email:"something@mail.com",
+          <br/>            username:"something",
+          <br/>            address:"something",
+          <br/>            telp:"something",
+          <br/>            apiKey:apiKey
           <br/>         &#125;,
           <br/>         &#123;
-          <br/>            id_user:"2",
-          <br/>            id_dev:"1",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          <br/>            idUser:"2",
+          <br/>            idDeveloper:"1",
+          <br/>            email:"something@mail.com",
+          <br/>            username:"something",
+          <br/>            address:"something",
+          <br/>            telp:"something",
+          <br/>            apiKey:apiKey
           <br/>         &#125;
           <br/>
           	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
@@ -153,9 +153,9 @@ var User =(
     </pre>
 
     <hr/>
-    <h3>Find One Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/find/id_user">http://barang-hilang.azurewebsites.net/api/v1/users/find/id_user</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Get User</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/find/id">http://barang-hilang.azurewebsites.net/api/v1/users/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
     <p>Request Body : <code>none</code></p>
@@ -166,14 +166,49 @@ var User =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          &nbsp;result: &#123;
+          <br/>            idUser:"1",
+          <br/>            idDeveloper:"2",
+          <br/>            email:"something@mail.com",
+          <br/>            username:"something",
+          <br/>            address:"something",
+          <br/>            telp:"something",
+          <br/>            apiKey:apiKey
+          <br/>         &#125;
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Auth Login</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/auth">http://barang-hilang.azurewebsites.net/api/v1/users/auth</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>POST</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>       email="registered_email@mail.com",
+          <br/>       password="1234
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: &#123;
+          <br/>            idDeveloper:"1",
+          <br/>            email:"something@mail.com",
+          <br/>            username:"something",
+          <br/>            address:"something",
+          <br/>            telp:"something",
+          <br/>            apiKey:apiKey
           <br/>         &#125;
           <br/>
             &#125;
@@ -183,19 +218,19 @@ var User =(
     <hr/>
     <h3>Insert New Users</h3>
     <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>POST</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1",
-          <br/>       id_dev:"2",
-          <br/>       email_user:"something@mail.com",
-          <br/>       username_user:"something",
-          <br/>       address_user:"something",
-          <br/>       telp_user:"something",
+          <br/>       idUser:"1",
+          <br/>       idDeveloper:"2",
+          <br/>       email:"something@mail.com",
+          <br/>       username:"something",
+          <br/>       address:"something",
+          <br/>       telp:"something",
           <br/>&#125;
       </code>
     </pre>
@@ -206,15 +241,7 @@ var User =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Add Success"
           <br/>
             &#125;
       </code>
@@ -223,19 +250,19 @@ var User =(
     <hr/>
     <h3>Update Users</h3>
     <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>PUT</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1",
-          <br/>       id_dev:"2",
-          <br/>       email_user:"something@mail.com",
-          <br/>       username_user:"something",
-          <br/>       address_user:"something",
-          <br/>       telp_user:"something",
+          <br/>       idUser:"1",
+          <br/>       idDeveloper:"2",
+          <br/>       email:"something@mail.com",
+          <br/>       username:"something",
+          <br/>       address:"something",
+          <br/>       telp:"something",
           <br/>&#125;
       </code>
     </pre>
@@ -246,15 +273,7 @@ var User =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Success Update"
           <br/>
             &#125;
       </code>
@@ -263,14 +282,14 @@ var User =(
     <hr/>
     <h3>Delete User</h3>
     <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>DELETE</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1"
+          <br/>       id:"1"
           <br/>&#125;
       </code>
     </pre>
@@ -281,15 +300,7 @@ var User =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Success Delete"
           <br/>
             &#125;
       </code>
@@ -302,11 +313,11 @@ var User =(
 var Barang =(
   <div>
     <h1>Barang Content</h1>
-    <p>Barang are the data of person that assign / sign-up to your app as a person that want to post something lost</p>
+    <p>Barang are the stuffs that can be CRUD in this webservice</p>
     <hr/>
-    <h3>Find All Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Get All Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
     <p>Request Body : <code>none</code></p>
@@ -317,24 +328,24 @@ var Barang =(
         	&nbsp;status: 200,<br/>
         	&nbsp;message: success,
           <br/>
-          &nbsp;users:	&#91;
+          &nbsp;result:	&#91;
           <br/>         &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
           <br/>         &#125;,
           <br/>         &#123;
-          <br/>            id_user:"2",
-          <br/>            id_dev:"1",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          <br/>            idBarang:"2,
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang 2",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
           <br/>         &#125;
           <br/>
           	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
@@ -344,9 +355,9 @@ var Barang =(
     </pre>
 
     <hr/>
-    <h3>Find One Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/find/id_user">http://barang-hilang.azurewebsites.net/api/v1/users/find/id_user</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>get Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
     <p>Request Body : <code>none</code></p>
@@ -357,14 +368,14 @@ var Barang =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          &nbsp;result: &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
           <br/>         &#125;
           <br/>
             &#125;
@@ -372,21 +383,21 @@ var Barang =(
     </pre>
 
     <hr/>
-    <h3>Insert New Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Add Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>POST</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1",
-          <br/>       id_dev:"2",
-          <br/>       email_user:"something@mail.com",
-          <br/>       username_user:"something",
-          <br/>       address_user:"something",
-          <br/>       telp_user:"something",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
           <br/>&#125;
       </code>
     </pre>
@@ -397,36 +408,29 @@ var Barang =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Add Success"
           <br/>
             &#125;
       </code>
     </pre>
 
     <hr/>
-    <h3>Update Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Update Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>PUT</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1",
-          <br/>       id_dev:"2",
-          <br/>       email_user:"something@mail.com",
-          <br/>       username_user:"something",
-          <br/>       address_user:"something",
-          <br/>       telp_user:"something",
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
           <br/>&#125;
       </code>
     </pre>
@@ -437,31 +441,23 @@ var Barang =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Success Update"
           <br/>
             &#125;
       </code>
     </pre>
 
     <hr/>
-    <h3>Delete User</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Delete Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>DELETE</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1"
+          <br/>       idBarang:"1"
           <br/>&#125;
       </code>
     </pre>
@@ -472,15 +468,7 @@ var Barang =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Success Delete"
           <br/>
             &#125;
       </code>
@@ -493,11 +481,11 @@ var Barang =(
 var Pelaporan =(
   <div>
     <h1>Pelaporan Content</h1>
-    <p>Pelaporan are the data of person that assign / sign-up to your app as a person that want to post something lost</p>
+    <p>Pelaporan is look-like reporting about stuff that lost-found</p>
     <hr/>
-    <h3>Find All Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Get All Pelaporan</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/pelaporan">http://barang-hilang.azurewebsites.net/api/v1/pelaporan</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
     <p>Request Body : <code>none</code></p>
@@ -508,24 +496,28 @@ var Pelaporan =(
         	&nbsp;status: 200,<br/>
         	&nbsp;message: success,
           <br/>
-          &nbsp;users:	&#91;
+          &nbsp;result:	&#91;
           <br/>         &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          <br/>            idPelaporan:"1",
+          <br/>            idBarang:"2",
+          <br/>            idUserPelapor:"something@mail.com",
+          <br/>            idUserPenemu:"something",
+          <br/>            keterangan:"something",
+          <br/>            tempatHilang:"date_time",
+          <br/>            tanggalHilang:"place_name",
+          <br/>            tempatDitemukan:"date_time",
+          <br/>            tanggalDitemukan:"place_name",
           <br/>         &#125;,
           <br/>         &#123;
-          <br/>            id_user:"2",
-          <br/>            id_dev:"1",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          <br/>            idPelaporan:"3",
+          <br/>            idBarang:"2",
+          <br/>            idUserPelapor:"something@mail.com",
+          <br/>            idUserPenemu:"something",
+          <br/>            keterangan:"something",
+          <br/>            tempatHilang:"date_time",
+          <br/>            tanggalHilang:"place_name",
+          <br/>            tempatDitemukan:"date_time",
+          <br/>            tanggalDitemukan:"place_name",
           <br/>         &#125;
           <br/>
           	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
@@ -535,9 +527,9 @@ var Pelaporan =(
     </pre>
 
     <hr/>
-    <h3>Find One Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/find/id_user">http://barang-hilang.azurewebsites.net/api/v1/users/find/id_user</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Get Pelaporan</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/pelaporan/find/id">http://barang-hilang.azurewebsites.net/api/v1/pelaporan/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
     <p>Request Body : <code>none</code></p>
@@ -548,14 +540,16 @@ var Pelaporan =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
+          &nbsp;result: &#123;
+          <br/>            idPelaporan:"1",
+          <br/>            idBarang:"2",
+          <br/>            idUserPelapor:"something@mail.com",
+          <br/>            idUserPenemu:"something",
+          <br/>            keterangan:"something",
+          <br/>            tempatHilang:"date_time",
+          <br/>            tanggalHilang:"place_name",
+          <br/>            tempatDitemukan:"date_time",
+          <br/>            tanggalDitemukan:"place_name",
           <br/>         &#125;
           <br/>
             &#125;
@@ -563,21 +557,23 @@ var Pelaporan =(
     </pre>
 
     <hr/>
-    <h3>Insert New Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Add Pelaporan</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/pelaporan">http://barang-hilang.azurewebsites.net/api/v1/pelaporan</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>POST</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1",
-          <br/>       id_dev:"2",
-          <br/>       email_user:"something@mail.com",
-          <br/>       username_user:"something",
-          <br/>       address_user:"something",
-          <br/>       telp_user:"something",
+            <br/>            idBarang:"2",
+            <br/>            idUserPelapor:"something@mail.com",
+            <br/>            idUserPenemu:"something",
+            <br/>            keterangan:"something",
+            <br/>            tempatHilang:"date_time",
+            <br/>            tanggalHilang:"place_name",
+            <br/>            tempatDitemukan:"date_time",
+            <br/>            tanggalDitemukan:"place_name",
           <br/>&#125;
       </code>
     </pre>
@@ -588,36 +584,31 @@ var Pelaporan =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result:"Add Success"
           <br/>
             &#125;
       </code>
     </pre>
 
     <hr/>
-    <h3>Update Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Update Pelaporan</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/pelaporan">http://barang-hilang.azurewebsites.net/api/v1/pelaporan</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>PUT</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1",
-          <br/>       id_dev:"2",
-          <br/>       email_user:"something@mail.com",
-          <br/>       username_user:"something",
-          <br/>       address_user:"something",
-          <br/>       telp_user:"something",
+            <br/>            idPelaporan:"1",
+            <br/>            idBarang:"2",
+            <br/>            idUserPelapor:"something@mail.com",
+            <br/>            idUserPenemu:"something",
+            <br/>            keterangan:"something",
+            <br/>            tempatHilang:"date_time",
+            <br/>            tanggalHilang:"place_name",
+            <br/>            tempatDitemukan:"date_time",
+            <br/>            tanggalDitemukan:"place_name",
           <br/>&#125;
       </code>
     </pre>
@@ -628,31 +619,23 @@ var Pelaporan =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Success Update"
           <br/>
             &#125;
       </code>
     </pre>
 
     <hr/>
-    <h3>Delete User</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>X-Auth-Token: YOUR_TOKEN_API_KEY, <br/>content-type: application/json</code></p>
+    <h3>Delete Pelaporan</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/pelaporan">http://barang-hilang.azurewebsites.net/api/v1/pelaporan</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>DELETE</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id_user:"1"
+          <br/>       idPelaporan:"1"
           <br/>&#125;
       </code>
     </pre>
@@ -663,15 +646,7 @@ var Pelaporan =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;user: &#123;
-          <br/>            id_user:"1",
-          <br/>            id_dev:"2",
-          <br/>            email_user:"something@mail.com",
-          <br/>            username_user:"something",
-          <br/>            address_user:"something",
-          <br/>            telp_user:"something",
-          <br/>            api_key:API_KEY_USER
-          <br/>         &#125;
+          &nbsp;result: "Success Delete"
           <br/>
             &#125;
       </code>

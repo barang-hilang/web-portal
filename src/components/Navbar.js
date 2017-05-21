@@ -5,7 +5,7 @@ var Navbar = React.createClass({
   logout: function() {
     localStorage.setItem('authenticated',-1);
     alert('Logout Success');
-    window.location="http://localhost:3000/";
+    window.location="https://portal-barang-hilang.azurewebsites.net/";
   },
   render: function(){
     if(localStorage.getItem('authenticated')==-1)

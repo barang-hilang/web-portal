@@ -71,7 +71,7 @@ class AuthLogin extends React.Component {
           window.location="https://portal-barang-hilang.azurewebsites.net/";
         }
         else {
-          alert("Failed");
+          alert("Failed : "+res.data.message);
         }
       })
     .catch((e) => {
@@ -80,7 +80,7 @@ class AuthLogin extends React.Component {
       console.log(e.code);
       console.log(e.config);
       console.log(e.response);
-        alert("Error");
+        alert("Error, Sorry somethings not work for network conenction");
     });
   }
 

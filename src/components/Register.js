@@ -45,8 +45,7 @@ class Register  extends React.Component {
           alert("Success Daftar");
         }
         else {
-          alert("Failed");
-
+          alert("Failed : "+res.data.message);
         }
       })
     .catch((e)=>{

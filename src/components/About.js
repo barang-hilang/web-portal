@@ -14,7 +14,7 @@ var About = React.createClass({
       <h3>Notes for developer</h3>
       <p>This WebService are free, but for free developers, there are limiation :</p>
       <ul>
-        <li>Api Call rate : max 50 call/min.</li>
+        <li>Api Call rate (For User-Barang-Pelaporan Usage) : max 10 call/min.</li>
       </ul>
       <p>Soon we will add membership / donation for premium member that will provides no limitation for api request</p>
       <br/>
