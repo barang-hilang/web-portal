@@ -20,7 +20,7 @@ class ProfilePage extends React.Component {
 
   getDataProfile(){
     this.setState({isLoading: true})
-    axios.get('http://localhost:8080/api/v1/developers/find/'+localStorage.getItem("idDeveloper"),{
+    axios.get('https://barang-hilang.azurewebsites.net/api/v1/developers/find/'+localStorage.getItem("idDeveloper"),{
       headers:{
         'Content-Type' : 'application/json',
         'apiKey':localStorage.getItem('apiKey')

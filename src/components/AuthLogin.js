@@ -43,7 +43,7 @@ class AuthLogin extends React.Component {
     event.preventDefault();
     this.setState({isLoading:true});
 
-    axios.post('http://localhost:8080/api/v1/developers/auth',{
+    axios.post('https://barang-hilang.azurewebsites.net/api/v1/developers/auth',{
       headers:{
         'Content-Type' : 'application/json'
       },
@@ -68,7 +68,7 @@ class AuthLogin extends React.Component {
           console.log("Api Key : "+localStorage.getItem('apiKey'));
           console.log("Id Dev : "+localStorage.getItem('idDeveloper'));
 
-          window.location="http://localhost:3000/";
+          window.location="https://portal-barang-hilang.azurewebsites.net/";
         }
         else {
           alert("Failed");

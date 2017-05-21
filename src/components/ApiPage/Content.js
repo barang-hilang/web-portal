@@ -9,7 +9,7 @@ var HomeDiv = <div>
     <p>After that you can use the api key within your header http request, see example below </p>
     <hr/>
     <h3>Base URI</h3>
-    <p><code><a href="barang-hilang.azurewebsites.net/api/v1">barang-hilang.azurewebsites.net/api/v1</a></code></p>
+    <p><code><a href="https://barang-hilang.azurewebsites.net/api/v1/">barang-hilang.azurewebsites.net/api/v1</a></code></p>
     <hr/>
     <h3>Base Response</h3>
     {/* <p><code>status: HTTP_STATUS</code></p>

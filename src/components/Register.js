@@ -30,7 +30,7 @@ class Register  extends React.Component {
     //agar bisa akses beda port, event normal/default dibatalkan
     event.preventDefault();
     this.setState({isLoading:true});
-    axios.post('http://localhost:8080/api/v1/developers/',{
+    axios.post('https://barang-hilang.azurewebsites.net/api/v1/developers/',{
       headers:{
         'Content-Type' : 'application/json'
       },
