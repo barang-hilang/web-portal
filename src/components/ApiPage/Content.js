@@ -17,7 +17,9 @@ var HomeDiv = <div>
     <pre>
       <code className="language-javascript hljs">
         status: HTTP_STATUS,<br/>
-        message: HTTP_STATUS_MESSAGE
+        message: HTTP_STATUS_MESSAGE,<br/>
+        result: &#91; &#123; Object Result &#125; &#93;<br/>
+        link : relSelfLink
       </code>
     </pre>
     <hr/>
@@ -26,8 +28,8 @@ var HomeDiv = <div>
     <p><code>Application-Context: application/json</code></p> */}
     <pre>
       <code className="language-javascript hljs">
-        X-Auth-Token: YOUR_TOKEN_API_KEY,<br/>
-        ApplicationContext: application/json
+        apiKey: YOUR_TOKEN_API_KEY,<br/>
+        Content-Type: application/json
       </code>
     </pre>
     <br/>
@@ -42,12 +44,12 @@ var HomeDiv = <div>
         </thead>
         <tbody>
           <tr>
-            <td>X-Auth-Token</td>
+            <td>apiKey</td>
             <td>[a-z1-9]+</td>
             <td>Your authentication token</td>
           </tr>
           <tr>
-            <td>Application-Context</td>
+            <td>Content-Type</td>
             <td>application/json</td>
             <td>Request method, for requesting JSON for response API</td>
           </tr>
@@ -124,7 +126,7 @@ var User =(
         	&nbsp;status: 200,<br/>
         	&nbsp;message: success,
           <br/>
-          &nbsp;users:	&#91;
+          &nbsp;result:	&#91;
           <br/>         &#123;
           <br/>            id_user:"1",
           <br/>            id_dev:"2",

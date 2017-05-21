@@ -1,4 +1,5 @@
 var React = require('react');
+var TypeWriter = require('react-typewriter');
 
 var ImageSrc=[
   'images/bg1.jpg',
@@ -24,9 +25,16 @@ var ImageBar = React.createClass({
         backgroundImage: "url(" + ImageSrc[1] + ")",
          color: 'white',
       };
+    if(this.state.page==="Home")
     return(
       <div className="ImageBar" style={ImageBarStyle}>
-        <h1>{this.state.page}</h1>
+          <TypeWriter typing={0.8} onTypingEnd reset><h1>Welcome to Barang Hilang WebService</h1></TypeWriter>
+      </div>
+    );
+    else if(this.state.page==="About")
+    return(
+      <div className="ImageBar" style={ImageBarStyle}>
+          <TypeWriter typing={0.8} onTypingEnd reset><h1>This is our information of Barang Hilang</h1></TypeWriter>
       </div>
     );
   }

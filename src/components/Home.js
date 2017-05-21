@@ -6,11 +6,14 @@ var Home = React.createClass({
     <div className="HomePage">
       <h2>What is Barang Hilang ?</h2>
       <hr/>
-      <p>Barang hilang is a ........</p>
+      <p>Barang hilang is a web-service for everything user post to our asset.
+        The purpose is to help people whose lost his/her item to announce to public.
+         So the information can be centralized to this web service</p>
       <br/>
-      <h2>What advantage can I get ?</h2>
+      <h2>What advantage can you get ?</h2>
       <hr/>
-      <p>As you read at intro, we ....</p>
+      <p>You can use our asset to make your own application to "HELP" whose lost their items.
+      You can look for another information from the navigation bar</p>
     </div>
     );
   }

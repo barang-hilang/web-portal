@@ -14,7 +14,9 @@ class AuthLogin extends React.Component {
       email: '',
       password:'',
       authenticated: false,
-      isLoading:false
+      isLoading:false,
+      idDev:'',
+      apiKey:''
     };
 
     this.loginCek = this.loginCek.bind(this);
@@ -59,8 +61,12 @@ class AuthLogin extends React.Component {
           this.state.authenticated=true;
 
           localStorage.setItem('authenticated',res.data.result[0].email);
-          alert(localStorage.getItem('authenticated'));
-          console.log(localStorage.getItem('authenticated'));
+          localStorage.setItem('apiKey',res.data.result[0].token);
+          localStorage.setItem('idDeveloper',res.data.result[0].idDeveloper);
+
+          console.log("Email :"+localStorage.getItem('authenticated'));
+          console.log("Api Key : "+localStorage.getItem('apiKey'));
+          console.log("Id Dev : "+localStorage.getItem('idDeveloper'));
 
           window.location="http://localhost:3000/";
         }
@@ -78,6 +84,7 @@ class AuthLogin extends React.Component {
     });
   }
 
+
   render() {
     if(localStorage.getItem('authenticated')==-1){
     return(
@@ -86,11 +93,13 @@ class AuthLogin extends React.Component {
         <h2>Login</h2>
         <hr/>
         <p>If you're developer, you can login here</p>
-        <form onSubmit={this.loginCek.bind(this)}>
+        <form data-toogle="validator" role="form" onSubmit={this.loginCek.bind(this)}>
 
           <div className="form-group">
             <label>Username/Email :</label>
-            <input type="text" className="form-control" id="usr"
+            <input type="email" className="form-control" id="usr"
+              data-error="Sorry, that email address is invalid"
+              required
               value={this.state.email}
               onChange={this.handleChangeEmail}
             />
@@ -98,6 +107,8 @@ class AuthLogin extends React.Component {
             <div className="form-group">
               <label>Password:</label>
               <input type="password" className="form-control" id="pwd"
+                data-minlength="6"
+                required
                 value={this.state.password}
                 onChange={this.handleChangePassword}
               />

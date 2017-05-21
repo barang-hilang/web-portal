@@ -63,13 +63,8 @@ class Register  extends React.Component {
   render(){
     return(
       <div className="container RegisterPage">
-        <h3>Notes for developer</h3>
-        <p>This WebService are free, but for free developers, there are limiation :</p>
-        <ul>
-          <li>Api Call rate : max 50 call/min.</li>
-        </ul>
-        <p>Soon we will add membership / donation for premium member that will provides no limitation for api request</p>
-        <hr/>
+        <br/>
+        <br/>
         <h2>Register for free</h2>
         <hr/>
         <p>If you're developer, you can sign-up here</p>
@@ -77,7 +72,9 @@ class Register  extends React.Component {
         <form onSubmit={this.loginCek.bind(this)}>
           <div className="form-group">
             <label for="usr">Email :</label>
-            <input type="text" className="form-control" id="usr"
+            <input type="email" className="form-control" id="usr"
+              data-error="Sorry, that email address is invalid"
+              required
               value={this.state.email}
               onChange={this.handleChangeEmail}
             />
@@ -85,6 +82,8 @@ class Register  extends React.Component {
           <div className="form-group">
             <label for="pwd">Password:</label>
             <input type="password" className="form-control" id="pwd"
+              data-minlength="6"
+              required
               value={this.state.password}
               onChange={this.handleChangePassword}
             />
