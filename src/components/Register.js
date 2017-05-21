@@ -43,9 +43,11 @@ class Register  extends React.Component {
       this.setState({isLoading:false});
         if(res.data.message==="Developer Has Been Created"){
           alert("Success Daftar");
+          window.location="http://portal-barang-hilang.azurewebsites.net/";
         }
         else {
           alert("Failed : "+res.data.message);
+          window.location="http://portal-barang-hilang.azurewebsites.net/register";
         }
       })
     .catch((e)=>{
@@ -55,6 +57,7 @@ class Register  extends React.Component {
       console.log(e.config);
       console.log(e.response);
         alert("Error");
+        window.location="http://portal-barang-hilang.azurewebsites.net/register";
     });
 
   }
