@@ -16,10 +16,22 @@ var SideBar = React.createClass({
                   <NavLink to="/doc/api/users">User</NavLink>
                </li>
                <li>
-                 <NavLink to="/doc/api/barang">Barang</NavLink>
+                 <NavLink to="/doc/api/barang">Role</NavLink>
                </li>
                <li>
                  <NavLink to="/doc/api/pelaporan">Pelaporan</NavLink>
+               </li>
+               <li>
+                 <NavLink to="/doc/api/pelaporan">Log</NavLink>
+               </li>
+               <li>
+                 <NavLink to="/doc/api/barang">Barang</NavLink>
+               </li>
+               <li>
+                 <NavLink to="/doc/api/pelaporan">Kategori Barang</NavLink>
+               </li>
+               <li>
+                 <NavLink to="/doc/api/pelaporan">Developer</NavLink>
                </li>
            </ul>
        </div>
