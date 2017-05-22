@@ -25,7 +25,7 @@ var About = React.createClass({
         <ul>
           <li>Chrysant Meike : <span><a href="https://github.com/chrystcarthn">https://github.com/chrystcarthn</a></span></li>
           <li>Ignatius Aldi Pradana : <span><a href="https://github.com/chrystcarthn">https://github.com/igprad</a></span></li>
-          <li>Reo Ramalika : <span><a href="https://github.com/reoramalika">https://github.com/chrystcarthn</a></span></li>
+          <li>Reo Ramalika : <span><a href="https://github.com/reoramalika">https://github.com/reoramalika</a></span></li>
           <li>William Yuto : <span><a href="https://github.com/Nyutnyut">https://github.com/Nyutnyut</a></span></li>
         </ul>
       </p>

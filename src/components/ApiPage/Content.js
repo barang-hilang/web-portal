@@ -108,9 +108,256 @@ var HomeDiv = <div>
   </div>
 ;
 
+
+                                                                                         
+                                                                        
+                                                                                        
+//Dokumentasi Bagian User                
 var User =(
   <div>
     <h1>Users Content</h1>
+    <p>Users are the data of person that assign / sign-up to your app as a person that lost something and want to post.</p>
+    <hr/>
+    <h3>Get All Users</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+        	&nbsp;status: 200,<br/>
+        	&nbsp;message: success,
+          <br/>
+          &nbsp;result:	&#91;
+          <br/>         &#123;
+          <br/>            "idUser": 1,
+          <br/>            "email": "aldi@gmail.com",
+          <br/>            "username": "aldi",
+          <br/>            "password": "1234"      
+          <br/>            "alamat": "alamat",
+          <br/>            "noHp": "089660553886",
+          <br/>            "apiKey": "wakowakowakowa",
+          <br/>            "apiKkey": "wakowakowakowa",
+          <br/>            "links": &#91;
+          <br/>              &#123;
+          <br/>                 "rel": "self"
+          <br/>                 "href": "http://barang-hilang.azurewebsites.net/api/v1/users"
+          <br/>              &#125;   
+          <br/>            &#93;
+          <br/>         &#125;,
+          <br/>         &#123;
+          <br/>            "idUser": 2,
+          <br/>            "email": "angganv@gmail.com",
+          <br/>            "username": "Yoanes Satrio Dewanggs",
+          <br/>            "password": "1234",      
+          <br/>            "alamat": "Jalan Babarsari Sebrlah Atma",
+          <br/>            "noHp": "089631782001",
+          <br/>            "apiKey": null,
+          <br/>            "apiKkey": null,
+          <br/>            "links": &#91;
+          <br/>              &#123;
+          <br/>                 "rel": "self"
+          <br/>                 "href": "http://barang-hilang.azurewebsites.net/api/v1/users"
+          <br/>              &#125;   
+          <br/>            &#93;
+          <br/>          &#125;
+          <br/> 
+          <br/>         &#93;,
+          <br/>         "httpStatus": "ACCEPTED",              
+          <br/>         "links": &#91;
+          <br/>           &#123;
+          <br/>             "rel": "self"
+          <br/>             "href": "http://barang-hilang.azurewebsites.net/api/v1/users"
+          <br/>           &#125;   
+          <br/>         &#93;
+                                                                                         
+          	&#125;                                                                                 
+                                                                                         
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Get User</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/find/id">http://barang-hilang.azurewebsites.net/api/v1/users/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+        	&nbsp;status: 200,<br/>
+        	&nbsp;message: success,
+          <br/>
+          &nbsp;result:	&#91;
+          <br/>         &#123;
+          <br/>            "idUser": 1,
+          <br/>            "email": "aldi@gmail.com",
+          <br/>            "username": "aldi",
+          <br/>            "password": "1234"      
+          <br/>            "alamat": "alamat",
+          <br/>            "noHp": "089660553886",
+          <br/>            "apiKey": "wakowakowakowa",
+          <br/>            "apiKkey": "wakowakowakowa",
+          <br/>            "links": &#91;
+          <br/>              &#123;
+          <br/>                 "rel": "self"
+          <br/>                 "href": "http://barang-hilang.azurewebsites.net/api/v1/users"
+          <br/>              &#125;   
+          <br/>            &#93;
+          <br/>         &#125;
+          <br/>         &#93;,
+          <br/>         "httpStatus": "ACCEPTED",              
+          <br/>         "links": &#91;
+          <br/>           &#123;
+          <br/>             "rel": "self"
+          <br/>             "href": "http://barang-hilang.azurewebsites.net/api/v1/users"
+          <br/>           &#125;   
+          <br/>         &#93;
+          <br/>&#125;                                                                                 
+                                                                                       
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Auth Login</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/auth">http://barang-hilang.azurewebsites.net/api/v1/users/auth</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>POST</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>       "email": "aldi@gmail.com",
+          <br/>       "password"="1234"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: &#123;
+          <br/>            "idUser": 1,
+          <br/>            "email": "aldi@gmail.com",
+          <br/>            "username": "aldi",
+          <br/>            "password": "1234"      
+          <br/>            "alamat": "alamat",
+          <br/>            "noHp": "089660553886",
+          <br/>            "apiKey": "wakowakowakowa",
+          <br/>            "apiKkey": "wakowakowakowa",
+          <br/>         &#125;
+          <br/>
+    &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Insert New Users</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>POST</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            "email": "willyuto@gmail.com",
+          <br/>            "username": "William",
+          <br/>            "password": "123456"      
+          <br/>            "alamat": "Dirgantara 2",
+          <br/>            "noHp": "089609840999",
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Add Success"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Update Users</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>PUT</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            "idUser": 3,
+          <br/>            "email": "willyuto@gmail.com",
+          <br/>            "username": "William",
+          <br/>            "password": "123456"      
+          <br/>            "alamat": "Dirgantara 2",
+          <br/>            "noHp": "089609840999",
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Update"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Delete User</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>DELETE</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>       "idUser":3
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Delete"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+
+  </div>
+);
+
+//Dokumentasi Bagian Role              
+var Role =(
+  <div>
+    <h1>Roles Content</h1>
     <p>Users are the data of person that assign / sign-up to your app as a person that want to post something lost</p>
     <hr/>
     <h3>Get All Users</h3>
@@ -310,174 +557,8 @@ var User =(
   </div>
 );
 
-var Barang =(
-  <div>
-    <h1>Barang Content</h1>
-    <p>Barang are the stuffs that can be CRUD in this webservice</p>
-    <hr/>
-    <h3>Get All Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>GET</code></p>
-    <p>Request Body : <code>none</code></p>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-        	&nbsp;status: 200,<br/>
-        	&nbsp;message: success,
-          <br/>
-          &nbsp;result:	&#91;
-          <br/>         &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;,
-          <br/>         &#123;
-          <br/>            idBarang:"2,
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang 2",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
-          <br/>
-          	&#125;
-      </code>
-    </pre>
 
-    <hr/>
-    <h3>get Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>GET</code></p>
-    <p>Request Body : <code>none</code></p>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Add Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>POST</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Add Success"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Update Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>PUT</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Success Update"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Delete Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>DELETE</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>       idBarang:"1"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Success Delete"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-
-  </div>
-);
-
+//Dokumentasi Pelaporan
 var Pelaporan =(
   <div>
     <h1>Pelaporan Content</h1>
@@ -656,6 +737,687 @@ var Pelaporan =(
   </div>
 );
 
+
+//Dokumentasi Log
+var Log =(
+  <div>
+    <h1>Log Content</h1>
+    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <hr/>
+    <h3>Get All Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+        	&nbsp;status: 200,<br/>
+        	&nbsp;message: success,
+          <br/>
+          &nbsp;result:	&#91;
+          <br/>         &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;,
+          <br/>         &#123;
+          <br/>            idBarang:"2,
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang 2",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
+          <br/>
+          	&#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>get Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Add Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>POST</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Add Success"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Update Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>PUT</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Update"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Delete Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>DELETE</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>       idBarang:"1"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Delete"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+
+  </div>
+);
+
+
+
+//Dokumentasi Barang
+var Barang =(
+  <div>
+    <h1>Barang Content</h1>
+    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <hr/>
+    <h3>Get All Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+        	&nbsp;status: 200,<br/>
+        	&nbsp;message: success,
+          <br/>
+          &nbsp;result:	&#91;
+          <br/>         &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;,
+          <br/>         &#123;
+          <br/>            idBarang:"2,
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang 2",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
+          <br/>
+          	&#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>get Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Add Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>POST</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Add Success"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Update Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>PUT</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Update"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Delete Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>DELETE</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>       idBarang:"1"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Delete"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+
+  </div>
+);
+
+//Dokumentasi Untuk Kategori Barang
+var KategoriBarang =(
+  <div>
+    <h1>Category Content</h1>
+    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <hr/>
+    <h3>Get All Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+        	&nbsp;status: 200,<br/>
+        	&nbsp;message: success,
+          <br/>
+          &nbsp;result:	&#91;
+          <br/>         &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;,
+          <br/>         &#123;
+          <br/>            idBarang:"2,
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang 2",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
+          <br/>
+          	&#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>get Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Add Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>POST</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Add Success"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Update Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>PUT</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Update"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Delete Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>DELETE</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>       idBarang:"1"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Delete"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+
+  </div>
+);
+
+
+//Dokumentasi Untuk Developer
+var Developer =(
+  <div>
+    <h1>Developer Content</h1>
+    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <hr/>
+    <h3>Get All Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+        	&nbsp;status: 200,<br/>
+        	&nbsp;message: success,
+          <br/>
+          &nbsp;result:	&#91;
+          <br/>         &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;,
+          <br/>         &#123;
+          <br/>            idBarang:"2,
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang 2",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
+          <br/>
+          	&#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>get Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>GET</code></p>
+    <p>Request Body : <code>none</code></p>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>         &#125;
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Add Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>POST</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Add Success"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Update Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>PUT</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>            idBarang:"1",
+          <br/>            idKategori:"2",
+          <br/>            idUser:"1",
+          <br/>            nama:"Barang Hilang",
+          <br/>            status:"Hilang",
+          <br/>            jumlah:"1",
+          <br/>            url_image:"URL_IMAGE"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Update"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+    <hr/>
+    <h3>Delete Barang Hilang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
+    <p>Request Param : <code>none</code></p>
+    <p>Request Method : <code>DELETE</code></p>
+    <p>Request Body : (Example)</p>
+    <pre>
+      <code className="language-javascript hljs">
+            &#123;
+          <br/>       idBarang:"1"
+          <br/>&#125;
+      </code>
+    </pre>
+    <br/><p><block>Example Response</block></p>
+    <pre>
+      <code className="language-javascript hljs">
+        &#123;<br/>
+          &nbsp;status: 200,<br/>
+          &nbsp;message: success,
+          <br/>
+          &nbsp;result: "Success Delete"
+          <br/>
+            &#125;
+      </code>
+    </pre>
+
+
+  </div>
+);
+
+
 var Content = React.createClass({
   getInitialState: function(){
     return{
@@ -666,13 +1428,21 @@ var Content = React.createClass({
   render: function(){
     var Result;
     if(this.state.content==="home")
-      Result = HomeDiv;
+        Result = HomeDiv;
     else if(this.state.content==="users")
-      Result = User;
-      else if(this.state.content==="barang")
+        Result = User;
+    else if(this.state.content==="role")
+        Result = Role;
+    else if(this.state.content==="pelaporan")
+        Result = Pelaporan;
+    else if(this.state.content==="log")
+        Result = Log;
+    else if(this.state.content==="barang")
         Result = Barang;
-        else if(this.state.content==="pelaporan")
-          Result = Pelaporan;
+    else if(this.state.content==="kategoribarang")
+        Result = KategoriBarang;
+    else if(this.state.content==="developer")
+        Result = Developer;
 
     return (
       <div id="page-content-wrapper">

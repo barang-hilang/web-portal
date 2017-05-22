@@ -122,16 +122,17 @@ var ApiPageUsers = React.createClass({
   }
 });
 
-var ApiPageBarang = React.createClass({
+var ApiPageRole = React.createClass({
   render: function(){
     return(
       <div id="wrapper" className="toggled">
         <SideBarAPI/>
-        <ContentAPI value="barang"/>
+        <ContentAPI value="role"/>
       </div>
     );
   }
 });
+
 
 var ApiPagePelaporan = React.createClass({
   render: function(){
@@ -143,6 +144,54 @@ var ApiPagePelaporan = React.createClass({
     );
   }
 });
+
+
+var ApiPageLog = React.createClass({
+  render: function(){
+    return(
+      <div id="wrapper" className="toggled">
+        <SideBarAPI/>
+        <ContentAPI value="log"/>
+      </div>
+    );
+  }
+});
+
+var ApiPageBarang = React.createClass({
+  render: function(){
+    return(
+      <div id="wrapper" className="toggled">
+        <SideBarAPI/>
+        <ContentAPI value="barang"/>
+      </div>
+    );
+  }
+});
+
+var ApiPageKategoriBarang = React.createClass({
+  render: function(){
+    return(
+      <div id="wrapper" className="toggled">
+        <SideBarAPI/>
+        <ContentAPI value="kategoribarang"/>
+      </div>
+    );
+  }
+});
+
+var ApiPageDeveloper = React.createClass({
+  render: function(){
+    return(
+      <div id="wrapper" className="toggled">
+        <SideBarAPI/>
+        <ContentAPI value="developer"/>
+      </div>
+    );
+  }
+});
+
+
+
 
 class App extends Component {
   constructor(props) {
@@ -158,9 +207,16 @@ class App extends Component {
             <Route exact path='/' component={HomeRoute}/>
             <Route path='/about' component={AboutRoute}/>
             <Route path='/doc/api/home' component={ApiPageHome}/>
+        
             <Route path='/doc/api/users' component={ApiPageUsers}/>
-            <Route path='/doc/api/barang' component={ApiPageBarang}/>
+            <Route path='/doc/api/role' component={ApiPageRole}/>
             <Route path='/doc/api/pelaporan' component={ApiPagePelaporan}/>
+            <Route path='/doc/api/log' component={ApiPageLog}/>
+            <Route path='/doc/api/barang' component={ApiPageBarang}/>
+            <Route path='/doc/api/kategoribarang' component={ApiPageKategoriBarang}/>
+            <Route path='/doc/api/developer' component={ApiPageDeveloper}/>
+            
+        
             <Route path='/test' component={TestRoute}/>
             <Route exact path="/login" component={AuthLogin}/>
             <Route exact path="/my/profile" component={Profile}/>
