@@ -357,11 +357,11 @@ var User =(
 //Dokumentasi Bagian Role              
 var Role =(
   <div>
-    <h1>Roles Content</h1>
-    <p>Users are the data of person that assign / sign-up to your app as a person that want to post something lost</p>
+    <h1>Role Content</h1>
+    <p>Role indicates the level of usage by the user. Can be Admin, Developer, etc</p>
     <hr/>
-    <h3>Get All Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
+    <h3>Get All Roles</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/roles">http://barang-hilang.azurewebsites.net/api/v1/roles</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -369,39 +369,43 @@ var Role =(
     <br/><p><block>Example Response</block></p>
     <pre>
       <code className="language-javascript hljs">
-        &#123;<br/>
-        	&nbsp;status: 200,<br/>
-        	&nbsp;message: success,
-          <br/>
-          &nbsp;result:	&#91;
-          <br/>         &#123;
-          <br/>            idUser:"1",
-          <br/>            idDeveloper:"2",
-          <br/>            email:"something@mail.com",
-          <br/>            username:"something",
-          <br/>            address:"something",
-          <br/>            telp:"something",
-          <br/>            apiKey:apiKey
-          <br/>         &#125;,
-          <br/>         &#123;
-          <br/>            idUser:"2",
-          <br/>            idDeveloper:"1",
-          <br/>            email:"something@mail.com",
-          <br/>            username:"something",
-          <br/>            address:"something",
-          <br/>            telp:"something",
-          <br/>            apiKey:apiKey
-          <br/>         &#125;
-          <br/>
-          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
-          <br/>
-          	&#125;
+            <br/>&#91;
+            <br/>  &#123;
+            <br/>    "idRole": 1,
+            <br/>    "role": "Admin",
+            <br/>    "links": &#91;
+            <br/>      &#123;
+            <br/>        "rel": "self",
+            <br/>        "href": "http://barang-hilang.azurewebsites.net/api/v1/roles/find/1"
+            <br/>      &#125;
+            <br/>    &#93;
+            <br/>  &#125;,
+            <br/>  &#123;
+            <br/>    "idRole": 2,
+            <br/>    "role": "Developer",
+            <br/>    "links": &#91;
+            <br/>      &#123;
+            <br/>        "rel": "self",
+            <br/>        "href": "http://barang-hilang.azurewebsites.net/api/v1/roles/find/2"
+            <br/>      &#125;
+            <br/>    &#93;
+            <br/>  &#125;,
+            <br/>  &#123;
+            <br/>    "idRole": 3,
+            <br/>    "role": "SuperDeveloper",
+            <br/>    "links": &#91;
+            <br/>      &#123;
+            <br/>        "rel": "self",
+            <br/>        "href": "http://barang-hilang.azurewebsites.net/api/v1/roles/find/3"
+            <br/>      &#125;
+            <br/>    &#93;
+            <br/>&#93;
       </code>
     </pre>
 
     <hr/>
-    <h3>Get User</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/find/id">http://barang-hilang.azurewebsites.net/api/v1/users/find/id</a></code></p>
+    <h3>Get a Role</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/roles/find/id">http://barang-hilang.azurewebsites.net/api/v1/roles/find/id</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -409,27 +413,22 @@ var Role =(
     <br/><p><block>Example Response</block></p>
     <pre>
       <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: &#123;
-          <br/>            idUser:"1",
-          <br/>            idDeveloper:"2",
-          <br/>            email:"something@mail.com",
-          <br/>            username:"something",
-          <br/>            address:"something",
-          <br/>            telp:"something",
-          <br/>            apiKey:apiKey
-          <br/>         &#125;
-          <br/>
-            &#125;
+            <br/>&#123;
+            <br/>   "idRole": 1,
+            <br/>   "role": "Admin",
+            <br/>   "links": &#91;
+            <br/>     &#123;
+            <br/>        "rel": "self",
+            <br/>        "href": "http://barang-hilang.azurewebsites.net/api/v1/roles/find/1"
+            <br/>     &#125;
+            <br/>    &#93;
+            <br/>&#125;,
       </code>
     </pre>
 
     <hr/>
-    <h3>Auth Login</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users/auth">http://barang-hilang.azurewebsites.net/api/v1/users/auth</a></code></p>
+    <h3>Insert New Role</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/roles">http://barang-hilang.azurewebsites.net/api/v1/roles</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>POST</code></p>
@@ -437,47 +436,7 @@ var Role =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       email="registered_email@mail.com",
-          <br/>       password="1234
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: &#123;
-          <br/>            idDeveloper:"1",
-          <br/>            email:"something@mail.com",
-          <br/>            username:"something",
-          <br/>            address:"something",
-          <br/>            telp:"something",
-          <br/>            apiKey:apiKey
-          <br/>         &#125;
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Insert New Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>POST</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>       idUser:"1",
-          <br/>       idDeveloper:"2",
-          <br/>       email:"something@mail.com",
-          <br/>       username:"something",
-          <br/>       address:"something",
-          <br/>       telp:"something",
+          <br/>      "role": "Manager",
           <br/>&#125;
       </code>
     </pre>
@@ -495,8 +454,8 @@ var Role =(
     </pre>
 
     <hr/>
-    <h3>Update Users</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
+    <h3>Update Roles</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/roles">http://barang-hilang.azurewebsites.net/api/v1/roles</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>PUT</code></p>
@@ -504,12 +463,8 @@ var Role =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       idUser:"1",
-          <br/>       idDeveloper:"2",
-          <br/>       email:"something@mail.com",
-          <br/>       username:"something",
-          <br/>       address:"something",
-          <br/>       telp:"something",
+          <br/>       "idRole": "1",
+          <br/>       "idDeveloper": "2"
           <br/>&#125;
       </code>
     </pre>
@@ -528,7 +483,7 @@ var Role =(
 
     <hr/>
     <h3>Delete User</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/users">http://barang-hilang.azurewebsites.net/api/v1/users</a></code></p>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/roles">http://barang-hilang.azurewebsites.net/api/v1/roles</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>DELETE</code></p>
@@ -536,7 +491,7 @@ var Role =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       id:"1"
+          <br/>     "idRole": "4"
           <br/>&#125;
       </code>
     </pre>
@@ -578,32 +533,105 @@ var Pelaporan =(
         	&nbsp;message: success,
           <br/>
           &nbsp;result:	&#91;
-          <br/>         &#123;
-          <br/>            idPelaporan:"1",
-          <br/>            idBarang:"2",
-          <br/>            idUserPelapor:"something@mail.com",
-          <br/>            idUserPenemu:"something",
-          <br/>            keterangan:"something",
-          <br/>            tempatHilang:"date_time",
-          <br/>            tanggalHilang:"place_name",
-          <br/>            tempatDitemukan:"date_time",
-          <br/>            tanggalDitemukan:"place_name",
-          <br/>         &#125;,
-          <br/>         &#123;
-          <br/>            idPelaporan:"3",
-          <br/>            idBarang:"2",
-          <br/>            idUserPelapor:"something@mail.com",
-          <br/>            idUserPenemu:"something",
-          <br/>            keterangan:"something",
-          <br/>            tempatHilang:"date_time",
-          <br/>            tanggalHilang:"place_name",
-          <br/>            tempatDitemukan:"date_time",
-          <br/>            tanggalDitemukan:"place_name",
-          <br/>         &#125;
-          <br/>
-          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
-          <br/>
-          	&#125;
+            <br/>&#123;
+            <br/>      "barang": &#123;
+            <br/>        "kategoriBarang": &#123;
+            <br/>          "jenis": "Elektronik",
+            <br/>          "idKategoriBarang": 1,
+            <br/>          "links": &#91;&#93;
+            <br/>        &#125;,
+            <br/>        "user": &#123;
+            <br/>          "idUser": 1,
+            <br/>          "email": "aldi@gmail.com",
+            <br/>          "username": "aldi",
+            <br/>          "password": "1234",
+            <br/>          "alamat": "alamat",
+            <br/>          "noHp": "089660553886",
+            <br/>          "apiKey": "wakowakowakowa",
+            <br/>          "apiKkey": "wakowakowakowa",
+            <br/>          "links": &#91;&#93;
+            <br/>        &#125;,
+            <br/>        "nama": "Iphone 7",
+            <br/>        "status": "lost",
+            <br/>        "jumlah": 1,
+            <br/>        "url_image": "https://cnet2.cbsistatic.com/img/CXq-MuOMDvpuhYOfgpmsHWbYdxg=/830x467/2016/09/12/9a3ba000-7c14-4f55-b685-92ffa90f353c/septus-02.jpg",
+            <br/>        "idBarang": 1,
+            <br/>        "links": &#91;&#93;
+            <br/>      &#125;,
+            <br/>      "pelapor": &#123;
+            <br/>        "idUser": 1,
+            <br/>        "email": "aldi@gmail.com",
+            <br/>        "username": "aldi",
+            <br/>        "password": "1234",
+            <br/>        "alamat": "alamat",
+            <br/>        "noHp": "089660553886",
+            <br/>        "apiKey": "wakowakowakowa",
+            <br/>        "apiKkey": "wakowakowakowa",
+            <br/>        "links": &#91;&#93;
+            <br/>      &#125;,
+            <br/>      "penemu": null,
+            <br/>      "keterangan": "Bagi yang menemukan akan dapat hadiah",
+            <br/>      "tempatHilang": "Jalan Babarsari No.46, Yogyakarta",
+            <br/>      "tanggalHilang": 1495486692688,
+            <br/>      "tempatDitemukan": null,
+            <br/>      "tanggalDitemukan": null,
+            <br/>      "idPelaporan": 1,
+            <br/>      "links": &#91;&#93;
+            <br/>    &#125;,
+            <br/>    &#123;
+            <br/>      "barang": &#123;
+            <br/>        "kategoriBarang": &#123;
+            <br/>          "jenis": "Keperluan Pribadi",
+            <br/>          "idKategoriBarang": 2,
+            <br/>          "links": &#91;&#93;
+            <br/>        &#125;,
+            <br/>        "user": &#123;
+            <br/>          "idUser": 1,
+            <br/>          "email": "aldi@gmail.com",
+            <br/>          "username": "aldi",
+            <br/>          "password": "1234",
+            <br/>          "alamat": "alamat",
+            <br/>          "noHp": "089660553886",
+            <br/>          "apiKey": "wakowakowakowa",
+            <br/>          "apiKkey": "wakowakowakowa",
+            <br/>          "links": &#91;&#93;
+            <br/>        &#125;,
+            <br/>        "nama": "Dompet",
+            <br/>        "status": "lost",
+            <br/>        "jumlah": 2,
+            <br/>        "url_image": "http://id-live-03.slatic.net/p/7/blackkelly-mens-wallet-dompet-pria-magnum-lcp-567-brown-6482-2528209-62c0917126ac62374beb48df14d2eed2.jpg",
+            <br/>        "idBarang": 2,
+            <br/>        "links": &#91;&#93;
+            <br/>      &#125;,
+            <br/>      "pelapor": &#123;
+            <br/>        "idUser": 1,
+            <br/>        "email": "aldi@gmail.com",
+            <br/>        "username": "aldi",
+            <br/>        "password": "1234",
+            <br/>        "alamat": "alamat",
+            <br/>        "noHp": "089660553886",
+            <br/>        "apiKey": "wakowakowakowa",
+            <br/>        "apiKkey": "wakowakowakowa",
+            <br/>        "links": &#91;&#93;
+            <br/>      &#125;,
+            <br/>      "penemu": null,
+            <br/>      "keterangan": "Bagi yang menemukan akan dapat hadiah",
+            <br/>      "tempatHilang": "Jalan Babarsari No.46, Yogyakarta",
+            <br/>      "tanggalHilang": 1495486692767,
+            <br/>      "tempatDitemukan": null,
+            <br/>      "tanggalDitemukan": null,
+            <br/>      "idPelaporan": 2,
+            <br/>      "links": &#91;&#93;
+            <br/>    &#125;,
+            <br/>  &#93;,
+            <br/>  "httpStatus": "ACCEPTED",
+            <br/>  "links": &#91;
+            <br/>    &#123;
+            <br/>      "rel": "self",
+            <br/>      "href": "http://barang-hilang.azurewebsites.net/api/v1/pelaporan"
+            <br/>    &#125;
+            <br/>  &#93;    
+            <br/>&#125;
       </code>
     </pre>
 
@@ -621,19 +649,61 @@ var Pelaporan =(
           &nbsp;status: 200,<br/>
           &nbsp;message: success,
           <br/>
-          &nbsp;result: &#123;
-          <br/>            idPelaporan:"1",
-          <br/>            idBarang:"2",
-          <br/>            idUserPelapor:"something@mail.com",
-          <br/>            idUserPenemu:"something",
-          <br/>            keterangan:"something",
-          <br/>            tempatHilang:"date_time",
-          <br/>            tanggalHilang:"place_name",
-          <br/>            tempatDitemukan:"date_time",
-          <br/>            tanggalDitemukan:"place_name",
-          <br/>         &#125;
-          <br/>
-            &#125;
+          &nbsp;result: &#123; 
+            <br/>&#123;
+            <br/>      "barang": &#123;
+            <br/>        "kategoriBarang": &#123;
+            <br/>          "jenis": "Keperluan Pribadi",
+            <br/>          "idKategoriBarang": 2,
+            <br/>          "links": &#91;&#93;
+            <br/>        &#125;,
+            <br/>        "user": &#123;
+            <br/>          "idUser": 1,
+            <br/>          "email": "aldi@gmail.com",
+            <br/>          "username": "aldi",
+            <br/>          "password": "1234",
+            <br/>          "alamat": "alamat",
+            <br/>          "noHp": "089660553886",
+            <br/>          "apiKey": "wakowakowakowa",
+            <br/>          "apiKkey": "wakowakowakowa",
+            <br/>          "links": &#91;&#93;
+            <br/>        &#125;,
+            <br/>        "nama": "Dompet",
+            <br/>        "status": "lost",
+            <br/>        "jumlah": 2,
+            <br/>        "url_image": "http://id-live-03.slatic.net/p/7/blackkelly-mens-wallet-dompet-pria-magnum-lcp-567-brown-6482-2528209-62c0917126ac62374beb48df14d2eed2.jpg",
+            <br/>        "idBarang": 2,
+            <br/>        "links": &#91;&#93;
+            <br/>      &#125;,
+            <br/>      "pelapor": &#123;
+            <br/>        "idUser": 1,
+            <br/>        "email": "aldi@gmail.com",
+            <br/>        "username": "aldi",
+            <br/>        "password": "1234",
+            <br/>        "alamat": "alamat",
+            <br/>        "noHp": "089660553886",
+            <br/>        "apiKey": "wakowakowakowa",
+            <br/>        "apiKkey": "wakowakowakowa",
+            <br/>        "links": &#91;&#93;
+            <br/>      &#125;,
+            <br/>      "penemu": null,
+            <br/>      "keterangan": "Bagi yang menemukan akan dapat hadiah",
+            <br/>      "tempatHilang": "Jalan Babarsari No.46, Yogyakarta",
+            <br/>      "tanggalHilang": 1495486692767,
+            <br/>      "tempatDitemukan": null,
+            <br/>      "tanggalDitemukan": null,
+            <br/>      "idPelaporan": 2,
+            <br/>      "links": &#91;&#93;
+            <br/>    &#125;,
+            <br/>  &#93;,
+            <br/>  "httpStatus": "ACCEPTED",
+            <br/>  "links": &#91;
+            <br/>    &#123;
+            <br/>      "rel": "self",
+            <br/>      "href": "http://barang-hilang.azurewebsites.net/api/v1/pelaporan"
+            <br/>    &#125;
+            <br/>  &#93;    
+            <br/>&#125;
       </code>
     </pre>
 
@@ -647,14 +717,14 @@ var Pelaporan =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-            <br/>            idBarang:"2",
-            <br/>            idUserPelapor:"something@mail.com",
-            <br/>            idUserPenemu:"something",
-            <br/>            keterangan:"something",
-            <br/>            tempatHilang:"date_time",
-            <br/>            tanggalHilang:"place_name",
-            <br/>            tempatDitemukan:"date_time",
-            <br/>            tanggalDitemukan:"place_name",
+            <br/>            "idBarang": 2,
+            <br/>            "idPelapor": 3,
+            <br/>            "idUserPenemu": 4,
+            <br/>            "keterangan": "Jatuh daerah tangga",
+            <br/>            "tempatHilang": "Kantor Pos Babarsari",
+            <br/>            "tanggalHilang": "20/05/2017",
+            <br/>            "tempatDitemukan": "Petraco Babarsari",
+            <br/>            "tanggalDitemukan": "22/05/2017",
           <br/>&#125;
       </code>
     </pre>
@@ -681,15 +751,15 @@ var Pelaporan =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-            <br/>            idPelaporan:"1",
-            <br/>            idBarang:"2",
-            <br/>            idUserPelapor:"something@mail.com",
-            <br/>            idUserPenemu:"something",
-            <br/>            keterangan:"something",
-            <br/>            tempatHilang:"date_time",
-            <br/>            tanggalHilang:"place_name",
-            <br/>            tempatDitemukan:"date_time",
-            <br/>            tanggalDitemukan:"place_name",
+            <br/>            "idPelaporan": "1",
+            <br/>            "idBarang": 2,
+            <br/>            "idUserPelapor": 3,
+            <br/>            "idUserPenemu": 4,
+            <br/>            "keterangan": "Jatuh dekat tangga",
+            <br/>            "tempatHilang": "Kantor Pos Babarsari",
+            <br/>            "tanggalHilang": "20/05/2017",
+            <br/>            "tempatDitemukan": "23/05/2017",
+            <br/>            "tanggalDitemukan": "Bank Mandiri Babarsari",
           <br/>&#125;
       </code>
     </pre>
@@ -716,7 +786,7 @@ var Pelaporan =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       idPelaporan:"1"
+          <br/>       "idPelaporan": 10
           <br/>&#125;
       </code>
     </pre>
@@ -738,14 +808,14 @@ var Pelaporan =(
 );
 
 
-//Dokumentasi Log
+//Dokumentasi Log //belum
 var Log =(
   <div>
     <h1>Log Content</h1>
-    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <p>From the log we can see the history of activities that have been done</p>
     <hr/>
-    <h3>Get All Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <h3>Get All Log</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/log">http://barang-hilang.azurewebsites.net/api/v1/log</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -753,39 +823,38 @@ var Log =(
     <br/><p><block>Example Response</block></p>
     <pre>
       <code className="language-javascript hljs">
-        &#123;<br/>
-        	&nbsp;status: 200,<br/>
-        	&nbsp;message: success,
-          <br/>
-          &nbsp;result:	&#91;
-          <br/>         &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;,
-          <br/>         &#123;
-          <br/>            idBarang:"2,
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang 2",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
-          <br/>
-          	&#125;
+        &#91;   
+        <br/>  .
+        <br/>  .
+        <br/>  .
+        <br/>  &#123;
+        <br/>    "idLog": 171,
+        <br/>    "timeRequest": 1495495845933,
+        <br/>    "status": "Get",
+        <br/>    "apiKey": "wakowakowakowa",
+        <br/>    "links": &#91;&#93;
+        <br/>  &#125;,
+        <br/>  &#123;
+        <br/>    "idLog": 172,
+        <br/>    "timeRequest": 1495496079244,
+        <br/>    "status": "Get",
+        <br/>    "apiKey": "wakowakowakowa",
+        <br/>    "links": &#91;&#93;
+        <br/>  &#125;,
+        <br/>  &#123;
+        <br/>    "idLog": 173,
+        <br/>    "timeRequest": 1495498642496,
+        <br/>    "status": "Post",
+        <br/>    "apiKey": "wakowakowakowa",
+        <br/>    "links": &#91;&#93;
+        <br/>  &#125;
+        <br/>&#93;
       </code>
     </pre>
 
     <hr/>
-    <h3>get Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <h3>Get Log</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/log/find/id">http://barang-hilang.azurewebsites.net/api/v1/log/find/id</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -793,40 +862,33 @@ var Log =(
     <br/><p><block>Example Response</block></p>
     <pre>
       <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-            &#125;
+            <br/>&#123;
+            <br/>  "idLog": 3,
+            <br/>  "timeRequest": 1495486888203,
+            <br/>  "status": "Post",
+            <br/>  "apiKey": "wakowakowakowa",
+            <br/>  "links": &#93;
+            <br/>    &#123;
+            <br/>      "rel": "self",
+            <br/>      "href": "http://barang-hilang.azurewebsites.net/api/v1/log"
+            <br/>    &#125;
+            <br/>  &#93;
+            <br/>&#125;
       </code>
     </pre>
 
     <hr/>
-    <h3>Add Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <h3>Add Log</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/log">http://barang-hilang.azurewebsites.net/api/v1/log</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>POST</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
-            &#123;
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
+          <br/>&#123;
+          <br/>         "timeRequest":"1",
+          <br/>         "status":"Post",
           <br/>&#125;
       </code>
     </pre>
@@ -844,49 +906,16 @@ var Log =(
     </pre>
 
     <hr/>
-    <h3>Update Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>PUT</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Success Update"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Delete Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <h3>Delete Log</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/log">http://barang-hilang.azurewebsites.net/api/v1/log</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>DELETE</code></p>
     <p>Request Body : (Example)</p>
     <pre>
       <code className="language-javascript hljs">
-            &#123;
-          <br/>       idBarang:"1"
+          <br/>&#123;
+          <br/>       "idLog": "174"
           <br/>&#125;
       </code>
     </pre>
@@ -913,7 +942,7 @@ var Log =(
 var Barang =(
   <div>
     <h1>Barang Content</h1>
-    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <p>Barang are the Lost Object that can be manage in this webservice, we can do CRUD (Create, Read, Update, Delete) method for Barang.</p>
     <hr/>
     <h3>Get All Barang</h3>
     <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
@@ -929,33 +958,78 @@ var Barang =(
         	&nbsp;message: success,
           <br/>
           &nbsp;result:	&#91;
-          <br/>         &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
+          <br/>     &#123;
+          <br/>         "kategoriBarang": &#123;
+          <br/>            "jenis": "Elektronik",
+          <br/>            "idKategoriBarang": 1,
+          <br/>            "links": &#91;&#93;
           <br/>         &#125;,
-          <br/>         &#123;
-          <br/>            idBarang:"2,
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang 2",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
+          <br/>         "user":&#123; 
+          <br/>            "idUser": 1,
+          <br/>            "email": "aldi@gmail.com",
+          <br/>            "username": "aldi",
+          <br/>            "password": "1234"      
+          <br/>            "alamat": "alamat",
+          <br/>            "noHp": "089660553886",
+          <br/>            "apiKey": "wakowakowakowa",
+          <br/>            "apiKkey": "wakowakowakowa",
+          <br/>            "links": &#91;&#93;
+          <br/>         &#125;,
+          <br/>         "nama": "Iphone 7",
+          <br/>         "status": "Lost",
+          <br/>         "jumlah": 1,
+          <br/>         "url_image": "https://cnet2.cbsistatic.com/img/CXq-MuOMDvpuhYOfgpmsHWbYdxg=/830x467/2016/09/12/9a3ba000-7c14-4f55-b685-92ffa90f353c/septus-02.jpg",
+          <br/>         "idBarang": 1,      
+          <br/>            "links": &#91;
+          <br/>              &#123;
+          <br/>                 "rel": "self"
+          <br/>                 "href": "http://barang-hilang.azurewebsites.net/api/v1/barang"
+          <br/>              &#125;   
+          <br/>            &#93;
+          <br/>         &#125;,
+          <br/>     &#123;
+          <br/>         "kategoriBarang": &#123;
+          <br/>            "jenis": "Keperluan Pribadi",
+          <br/>            "idKategoriBarang": 2,
+          <br/>            "links": &#91;&#93;
+          <br/>         &#125;,
+          <br/>         "user":&#123; 
+          <br/>            "idUser": 1,
+          <br/>            "email": "aldi@gmail.com",
+          <br/>            "username": "aldi",
+          <br/>            "password": "1234"      
+          <br/>            "alamat": "alamat",
+          <br/>            "noHp": "089660553886",
+          <br/>            "apiKey": "wakowakowakowa",
+          <br/>            "apiKkey": "wakowakowakowa",
+          <br/>            "links": &#91;&#93;
+          <br/>         &#125;,
+          <br/>         "nama": "Dompet",
+          <br/>         "status": "Lost",
+          <br/>         "jumlah": 2,
+          <br/>         "url_image": "http://id-live-03.slatic.net/p/7/blackkelly-mens-wallet-dompet-pria-magnum-lcp-567-brown-6482-2528209-62c0917126ac62374beb48df14d2eed2.jpg",
+          <br/>         "idBarang": 2,      
+          <br/>            "links": &#91;
+          <br/>              &#123;
+          <br/>                 "rel": "self"
+          <br/>                 "href": "http://barang-hilang.azurewebsites.net/api/v1/barang"
+          <br/>              &#125;   
+          <br/>            &#93;
           <br/>         &#125;
-          <br/>
-          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
-          <br/>
-          	&#125;
+          <br/>         &#93;,
+          <br/>         "httpStatus": "FOUND",             
+          <br/>         "links": &#91;
+          <br/>           &#123;
+          <br/>             "rel": "self"
+          <br/>             "href": "http://barang-hilang.azurewebsites.net/api/v1/barang"
+          <br/>           &#125;   
+          <br/>         &#93;
+          <br/>&#125;  
       </code>
     </pre>
 
     <hr/>
-    <h3>get Barang</h3>
+    <h3>Get Barang</h3>
     <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
@@ -969,16 +1043,44 @@ var Barang =(
           &nbsp;message: success,
           <br/>
           &nbsp;result: &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
+          <br/>     &#123;
+          <br/>         "kategoriBarang": &#123;
+          <br/>            "jenis": "Elektronik",
+          <br/>            "idKategoriBarang": 1,
+          <br/>            "links": &#91;&#93;
+          <br/>         &#125;,
+          <br/>         "user":&#123; 
+          <br/>            "idUser": 1,
+          <br/>            "email": "aldi@gmail.com",
+          <br/>            "username": "aldi",
+          <br/>            "password": "1234"      
+          <br/>            "alamat": "alamat",
+          <br/>            "noHp": "089660553886",
+          <br/>            "apiKey": "wakowakowakowa",
+          <br/>            "apiKkey": "wakowakowakowa",
+          <br/>            "links": &#91;&#93;
+          <br/>         &#125;,
+          <br/>         "nama": "Honda Beat",
+          <br/>         "status": "Lost",
+          <br/>         "jumlah": 5,
+          <br/>         "url_image": "http://s.kaskus.id/images/2016/04/24/2229201_20160424010013.jpg",
+          <br/>         "idBarang": 3,
+          <br/>            "links": &#91;
+          <br/>              &#123;
+          <br/>                 "rel": "self"
+          <br/>                 "href": "http://barang-hilang.azurewebsites.net/api/v1/barang"
+          <br/>              &#125;   
+          <br/>            &#93;
           <br/>         &#125;
-          <br/>
-            &#125;
+          <br/>         &#93;,
+          <br/>         "httpStatus": "FOUND",             
+          <br/>         "links": &#91;
+          <br/>           &#123;
+          <br/>             "rel": "self"
+          <br/>             "href": "http://barang-hilang.azurewebsites.net/api/v1/barang"
+          <br/>           &#125;   
+          <br/>         &#93;
+          <br/>&#125; 
       </code>
     </pre>
 
@@ -992,12 +1094,12 @@ var Barang =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
+          <br/>         "nama":"Charger Iphone",
+          <br/>         "idUser":3,
+          <br/>         "idKategoriBarang":"1",
+          <br/>         "status":"Lost",
+          <br/>         "jumlah":1,
+          <br/>         "url_image": "https://nguoivietphone.com/images/file/UUW_qxl50QgBAE1F/ban-co-the-sac-iphone-voi-bo-sac-khong-phai-cua-iphone-2.jpg"
           <br/>&#125;
       </code>
     </pre>
@@ -1005,10 +1107,10 @@ var Barang =(
     <pre>
       <code className="language-javascript hljs">
         &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
+          &nbsp; status: 200,<br/>
+          &nbsp; message: success,
           <br/>
-          &nbsp;result: "Add Success"
+          &nbsp; result: "Add Success"
           <br/>
             &#125;
       </code>
@@ -1024,13 +1126,13 @@ var Barang =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
+          <br/>         "idBarang": 15,
+          <br/>         "nama": "Charger Iphone",
+          <br/>         "idUser": 3,
+          <br/>         "idKategoriBarang": 1,
+          <br/>         "status": "Lost",
+          <br/>         "jumlah": 1,
+          <br/>         "url_image": "https://nguoivietphone.com/images/file/UUW_qxl50QgBAE1F/ban-co-the-sac-iphone-voi-bo-sac-khong-phai-cua-iphone-2.jpg"
           <br/>&#125;
       </code>
     </pre>
@@ -1038,10 +1140,10 @@ var Barang =(
     <pre>
       <code className="language-javascript hljs">
         &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
+          &nbsp; status: 200,<br/>
+          &nbsp; message: success,
           <br/>
-          &nbsp;result: "Success Update"
+          &nbsp; result: "Success Update"
           <br/>
             &#125;
       </code>
@@ -1057,7 +1159,7 @@ var Barang =(
     <pre>
       <code className="language-javascript hljs">
             &#123;
-          <br/>       idBarang:"1"
+          <br/>      "idBarang": 15
           <br/>&#125;
       </code>
     </pre>
@@ -1081,11 +1183,11 @@ var Barang =(
 //Dokumentasi Untuk Kategori Barang
 var KategoriBarang =(
   <div>
-    <h1>Category Content</h1>
-    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <h1>Kategori Barang Content</h1>
+    <p>In Kategori Barang developers can see categories of objects in Barang-Hilang</p>
     <hr/>
-    <h3>Get All Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <h3>Get All Kategori Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/kategori/barang">http://barang-hilang.azurewebsites.net/api/v1/kategori/barang</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -1093,39 +1195,39 @@ var KategoriBarang =(
     <br/><p><block>Example Response</block></p>
     <pre>
       <code className="language-javascript hljs">
-        &#123;<br/>
-        	&nbsp;status: 200,<br/>
-        	&nbsp;message: success,
-          <br/>
-          &nbsp;result:	&#91;
-          <br/>         &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;,
-          <br/>         &#123;
-          <br/>            idBarang:"2,
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang 2",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
-          <br/>
-          	&#125;
+          &#91;
+          <br/>        &#123;
+          <br/>           "jenis": "Elektronik",
+          <br/>           "idKategoriBarang": 1,
+          <br/>           "links": &#91;&#93;
+          <br/>        &#125;,
+          <br/>        &#123;
+          <br/>           "jenis": "Keperluan Pribadi",
+          <br/>           "idKategoriBarang": 2,
+          <br/>           "links": &#91;&#93;
+          <br/>        &#125;,
+          <br/>        &#123;
+          <br/>           "jenis": "Uang",
+          <br/>           "idKategoriBarang": 3,
+          <br/>           "links": &#91;&#93;
+          <br/>        &#125;,
+          <br/>        &#123;
+          <br/>           "jenis": "Surat",
+          <br/>           "idKategoriBarang": 4,
+          <br/>           "links": &#91;&#93;
+          <br/>        &#125;,
+          <br/>        &#123;
+          <br/>           "jenis": "Kendaraan",
+          <br/>           "idKategoriBarang": 5,
+          <br/>           "links": &#91;&#93;
+          <br/>        &#125;,
+          <br/>&#93;
       </code>
     </pre>
 
     <hr/>
-    <h3>get Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <h3>Get Kategori Barang</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/kategori/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -1133,116 +1235,18 @@ var KategoriBarang =(
     <br/><p><block>Example Response</block></p>
     <pre>
       <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-            &#125;
+        <br/>&#123;
+        <br/>    "jenis": "Uang",
+        <br/>    "idKategoriBarang": 3,
+        <br/>    "links": &#91;
+        <br/>      &#123;
+        <br/>         "rel": "self",
+        <br/>         "href": "http://barang-hilang.azurewebsites.net/api/v1/users"
+        <br/>       &#125;
+        <br/>     &#93;
+        <br/>&#125;
       </code>
     </pre>
-
-    <hr/>
-    <h3>Add Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>POST</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Add Success"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Update Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>PUT</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Success Update"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Delete Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>DELETE</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>       idBarang:"1"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Success Delete"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
 
   </div>
 );
@@ -1252,10 +1256,10 @@ var KategoriBarang =(
 var Developer =(
   <div>
     <h1>Developer Content</h1>
-    <p>Barang are the stuffs that can be CRUD in this webservice</p>
+    <p>People can see developer profile with limited.</p>
     <hr/>
-    <h3>Get All Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
+    <h3>Get All Developers</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/developers">http://barang-hilang.azurewebsites.net/api/v1/developers</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -1264,38 +1268,69 @@ var Developer =(
     <pre>
       <code className="language-javascript hljs">
         &#123;<br/>
-        	&nbsp;status: 200,<br/>
-        	&nbsp;message: success,
-          <br/>
-          &nbsp;result:	&#91;
-          <br/>         &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;,
-          <br/>         &#123;
-          <br/>            idBarang:"2,
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang 2",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-          	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#93;
-          <br/>
-          	&#125;
+        &nbsp;status: 200,<br/>
+        &nbsp;message: "Success",
+        <br/>
+        &nbsp;result:	&#91;
+        <br/>      &#123;
+        <br/>          "idDeveloper": 1,
+        <br/>          "role": &#123;
+        <br/>            "idRole": 2,
+        <br/>            "role": "Developer",
+        <br/>            "links": &#91;&#93;
+        <br/>          &#125;,
+        <br/>          "secretKey": "tes1",
+        <br/>          "token": "wakowakowakowa",
+        <br/>          "email": "apn@gmail.com",
+        <br/>          "password": "1234",
+        <br/>          "links": &#91;&#93;
+        <br/>            &#123;
+        <br/>              "rel": "self",
+        <br/>              "href": "http://barang-hilang.azurewebsites.net/api/v1/developers/find/1"
+        <br/>            &#125;,
+        <br/>            &#123;
+        <br/>              "rel": "role",
+        <br/>              "href": "http://barang-hilang.azurewebsites.net/api/v1/roles/find/2"
+        <br/>            &#125;
+        <br/>          &#93;
+        <br/>      &#125;,
+        <br/>      &#123;
+        <br/>          "idDeveloper": 2,
+        <br/>          "role": &#123;
+        <br/>          "idRole": 2,
+        <br/>          "role": "Developer",
+        <br/>          "links": &#91;&#93;
+        <br/>        &#125;,
+        <br/>        "secretKey": "tes2",
+        <br/>        "token": "wakowakowakowa2",
+        <br/>        "email": "aldi@gmail.com",
+        <br/>        "password": "1234",
+        <br/>        "links": &#91;
+        <br/>          &#123;
+        <br/>            "rel": "self",
+        <br/>            "href": "http://barang-hilang.azurewebsites.net/api/v1/developers/find/2"
+        <br/>          &#125;,
+        <br/>          &#123;
+        <br/>            "rel": "role",
+        <br/>            "href": "http://barang-hilang.azurewebsites.net/api/v1/roles/find/2"
+        <br/>          &#125;
+        <br/>        &#93;
+        <br/>     &#125;
+        <br/>   &#93;,
+        <br/>   "httpStatus": "OK",
+        <br/>   "links": &#91;
+        <br/>     &#123;
+        <br/>      "rel": "self",
+        <br/>      "href": "http://barang-hilang.azurewebsites.net/api/v1/developers"
+        <br/>     &#125;
+        <br/>   &#93;
+        <br/>&#125;
       </code>
     </pre>
 
     <hr/>
-    <h3>get Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang/find/id">http://barang-hilang.azurewebsites.net/api/v1/barang/find/id</a></code></p>
+    <h3>Get Developer</h3>
+    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/developers/find/id">http://barang-hilang.azurewebsites.net/api/v1/developers/find/id</a></code></p>
     <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
     <p>Request Param : <code>none</code></p>
     <p>Request Method : <code>GET</code></p>
@@ -1304,115 +1339,43 @@ var Developer =(
     <pre>
       <code className="language-javascript hljs">
         &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>         &#125;
-          <br/>
-            &#125;
+        &nbsp;status: 200,<br/>
+        &nbsp;message: "Active",
+        <br/>
+        &nbsp;result: &#91;
+        <br/>      &#123;
+        <br/>          "idDeveloper": 2,
+        <br/>          "role": &#123;
+        <br/>          "idRole": 2,
+        <br/>          "role": "Developer",
+        <br/>          "links": &#91;&#93;
+        <br/>        &#125;,
+        <br/>        "secretKey": "tes2",
+        <br/>        "token": "wakowakowakowa2",
+        <br/>        "email": "aldi@gmail.com",
+        <br/>        "password": "1234",
+        <br/>        "links": &#91;
+        <br/>          &#123;
+        <br/>            "rel": "self",
+        <br/>            "href": "http://barang-hilang.azurewebsites.net/api/v1/developers/find/2"
+        <br/>          &#125;,
+        <br/>          &#123;
+        <br/>            "rel": "role",
+        <br/>            "href": "http://barang-hilang.azurewebsites.net/api/v1/roles/find/2"
+        <br/>          &#125;
+        <br/>        &#93;
+        <br/>     &#125;
+        <br/>   &#93;,
+        <br/>   "httpStatus": "OK",
+        <br/>   "links": &#91;
+        <br/>     &#123;
+        <br/>      "rel": "self",
+        <br/>      "href": "http://barang-hilang.azurewebsites.net/api/v1/developers"
+        <br/>     &#125;
+        <br/>   &#93;
+        <br/>&#125;
       </code>
     </pre>
-
-    <hr/>
-    <h3>Add Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>POST</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Add Success"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Update Barang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>PUT</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>            idBarang:"1",
-          <br/>            idKategori:"2",
-          <br/>            idUser:"1",
-          <br/>            nama:"Barang Hilang",
-          <br/>            status:"Hilang",
-          <br/>            jumlah:"1",
-          <br/>            url_image:"URL_IMAGE"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Success Update"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
-    <hr/>
-    <h3>Delete Barang Hilang</h3>
-    <p>URI : <code><a href="http://barang-hilang.azurewebsites.net/api/v1/barang">http://barang-hilang.azurewebsites.net/api/v1/barang</a></code></p>
-    <p>Request Header : <br/><code>apiKey: YOUR_TOKEN_apiKey, <br/>content-type: application/json</code></p>
-    <p>Request Param : <code>none</code></p>
-    <p>Request Method : <code>DELETE</code></p>
-    <p>Request Body : (Example)</p>
-    <pre>
-      <code className="language-javascript hljs">
-            &#123;
-          <br/>       idBarang:"1"
-          <br/>&#125;
-      </code>
-    </pre>
-    <br/><p><block>Example Response</block></p>
-    <pre>
-      <code className="language-javascript hljs">
-        &#123;<br/>
-          &nbsp;status: 200,<br/>
-          &nbsp;message: success,
-          <br/>
-          &nbsp;result: "Success Delete"
-          <br/>
-            &#125;
-      </code>
-    </pre>
-
 
   </div>
 );
